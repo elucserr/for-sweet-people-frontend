@@ -78,13 +78,15 @@ Have effects on buttons and general views
 
 ### Trello
 
-Link to Trello
+[Link to Trello](https://trello.com/b/WxBh6cxW)
 
 ### Git
 
-The url to your repository and to your deployed project
-
 [Repository Link](https://github.com/elucserr/for-sweet-people-frontend)
+
+[Linked to Backend](https://github.com/elucserr/for-sweet-people-backend)
+
+### Deploy
 
 [Deploy Link](http://heroku.com/)
 
