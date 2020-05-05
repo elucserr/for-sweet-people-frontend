@@ -26,7 +26,9 @@ Personal motivation, since I have diabetes and I know how difficult it is to kee
 
 **Login** - As a user I want to be able to log in on the App so that I can access to my account
 
-**Logout** - As a user I want to be able to log out from the App
+**User profile** - As a user I want to see my own page with my personal details
+
+**Edit User profile** - As a user I want to be able to edit my profile
 
 **Options list** - As a user I want to see a page with the 4 options this App allows me to do
 
@@ -36,63 +38,40 @@ Personal motivation, since I have diabetes and I know how difficult it is to kee
 
 **Record Deletion** - As a user I want to delete my records of glucose levels, administration of medications, daily activity and monitoring of diet
 
+**Logout** - As a user I want to be able to log out from the App
+
 
 ## Backlog
 
-List of other features outside of the MVPs scope
+Diet record: Able to show food records with images using an external API
 
-My profile: Option to see my own profile, also to edit my own profile
+Medication record: Able to show medication records with images or options using an external API
 
-Diet record: Able to show food records with images
+Have effects on buttons and general views
 
-Medication record: Able to show medication records with images
 
-Friends: Have a list of friends with their profiles
-
-## ROUTES Backend:
-
-### Endpoints
-
-| Method | Path         | description     | Body |
-| :----: | ------------ | --------------- | ---- |
-|  GET   | `/protected` | protected route |      |
+## ViewsFrontEnd:
 
 ### Auth
 
 | Method | Path      | description    | Body                            |
 | :----: | --------- | -------------- | ------------------------------- |
-|  GET   | `/whoami` | who am i       |                                 |
 |  POST  | `/signup` | signup a user  | `{ username, password, email }` |
 |  POST  | `/login`  | login a user   | `{ username, password }`        |
 |  GET   | `/logout` | logout session |                                 |
 
-## Views
+## More Views
 
 | View (Component) | Path                  | description             |
 | :--------------- | --------------------- | --------------------    |
 | Home             | `/`                   | home                    |
-| Login            | `/login`              | login page              |
-| Protected        | `/protected`          | protected view          |
 | Options          | `/options`            | options                 |
 | User             | `/users/:id`          | show my profile         |
-| User Edit        | `/users/:id/edit`     | show form edit profile  |
 | Blood            | `/blood`              | list all records        |
-| Blood            | `/blood/add`          | show form create record |
-| Blood            | `/blood/:id`          | get a record            |
-| Blood            | `/blood/:id/update`   | update a record         |
 | Activity         | `/activity`           | list all records        |
-| Activity         | `/activity/add`       | show form create record |
-| Activity         | `/activity/:id`       | get a record            |
-| Activity         | `/activity/:id/update`| update a record         |
 | Medicine         | `/medicine`           | list all records        |
-| Medicine         | `/medicine/add`       | show form create record |
-| Medicine         | `/medicine/:id`       | get a record            |
-| Medicine         | `/medicine/:id/update`| update a record         |
 | Diet             | `/diet`               | list all records        |
-| Diet             | `/diet/add`           | show form create record |
-| Diet             | `/diet/:id`           | get a record            |
-| Diet             | `/diet/:id/update`    | update a record         |
-
+| 404              | `/404`                | show 404 error          |
  
 
 ## Links
