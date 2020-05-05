@@ -4,49 +4,50 @@
 
 create `.env` file like the example `.env.sample`
 
-start with `npm run start`
+start with `npm run start-dev`
 
-**http://localhost:3000**
+**http://localhost:5000**
 
 ## Description
 
-Describe your project in one/two lines.
+API destined for diabetic people with the intention of creating a daily record of glucose levels, administration of medications, daily activity and monitoring of diet.
 
 ## Motivation
 
-Just a litle API for educational purposes.
+Personal motivation, since I have diabetes and I know how difficult it is to keep good track of the different data. I would be very excited to use my own application.
 
 ## User Stories
 
-**404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault
+**404** - As a user I want to see a 404 page when I access to a page that does not exist
 
-**500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
+**Homepage** - As a user I want to be able to access to a homepage where appears an introduction of the App 
 
-**Homepage** - As a user I want to be able to access the homepage so that I see what the app is about and login and signup
+**Sign up** - As a user I want to sign up on the App so that I can access to all the functionalities
 
-**Sign up** - As a user I want to sign up on the webpage so that I can see all the events that I could attend
+**Login** - As a user I want to be able to log in on the App so that I can access to my account
 
-**Login** - As a user I want to be able to log in on the webpage so that I can get back to my account
+**Logout** - As a user I want to be able to log out from the App
 
-**Logout** - As a user I want to be able to log out from the webpage so that I can make sure no one will access my account
+**Options list** - As a user I want to see a page with the 4 options this App allows me to do
 
-**Events list** - As a user I want to see all the events available so that I can choose which ones I want to attend
+**Record Creation** - As a user I want to create records of glucose levels, administration of medications, daily activity and monitoring of diet
 
-**Events create** - As a user I want to create an event so that I can invite others to attend
+**Record Edition** - As a user I want to edit my records of glucose levels, administration of medications, daily activity and monitoring of diet
 
-**Events detail** - As a user I want to see the event details and attendee list of one event so that I can decide if I want to attend
+**Record Deletion** - As a user I want to delete my records of glucose levels, administration of medications, daily activity and monitoring of diet
 
-**Attend event** - As a user I want to be able to attend to event so that the organizers can count me in
 
 ## Backlog
 
 List of other features outside of the MVPs scope
 
-User profile: - see my profile - upload my profile picture - see other users profile - list of events created by the user - list events the user is attending
+My profile: Option to see my own profile, also to edit my own profile
 
-Geo Location: - add geolocation to events when creating - show event in a map in event detail page - show all events in a map in the event list page
+Diet record: Able to show food records with images
 
-Homepage: - …
+Medication record: Able to show medication records with images
+
+Friends: Have a list of friends with their profiles
 
 ## ROUTES Backend:
 
@@ -58,20 +59,41 @@ Homepage: - …
 
 ### Auth
 
-| Method | Path      | description    | Body                     |
-| :----: | --------- | -------------- | ------------------------ |
-|  GET   | `/whoami` | who am i       |                          |
-|  POST  | `/signup` | signup a user  | `{ username, password }` |
-|  POST  | `/login`  | login a user   | `{ username, password }` |
-|  GET   | `/logout` | logout session |                          |
+| Method | Path      | description    | Body                            |
+| :----: | --------- | -------------- | ------------------------------- |
+|  GET   | `/whoami` | who am i       |                                 |
+|  POST  | `/signup` | signup a user  | `{ username, password, email }` |
+|  POST  | `/login`  | login a user   | `{ username, password }`        |
+|  GET   | `/logout` | logout session |                                 |
 
 ## Views
 
-| View (Component) | Path         | description    |
-| :--------------- | ------------ | -------------- |
-| Home             | `/`          | home           |
-| Login            | `/login`     | login page     |
-| Protected        | `/protected` | protected view |
+| View (Component) | Path                  | description             |
+| :--------------- | --------------------- | --------------------    |
+| Home             | `/`                   | home                    |
+| Login            | `/login`              | login page              |
+| Protected        | `/protected`          | protected view          |
+| Options          | `/options`            | options                 |
+| User             | `/users/:id`          | show my profile         |
+| User Edit        | `/users/:id/edit`     | show form edit profile  |
+| Blood            | `/blood`              | list all records        |
+| Blood            | `/blood/add`          | show form create record |
+| Blood            | `/blood/:id`          | get a record            |
+| Blood            | `/blood/:id/update`   | update a record         |
+| Activity         | `/activity`           | list all records        |
+| Activity         | `/activity/add`       | show form create record |
+| Activity         | `/activity/:id`       | get a record            |
+| Activity         | `/activity/:id/update`| update a record         |
+| Medicine         | `/medicine`           | list all records        |
+| Medicine         | `/medicine/add`       | show form create record |
+| Medicine         | `/medicine/:id`       | get a record            |
+| Medicine         | `/medicine/:id/update`| update a record         |
+| Diet             | `/diet`               | list all records        |
+| Diet             | `/diet/add`           | show form create record |
+| Diet             | `/diet/:id`           | get a record            |
+| Diet             | `/diet/:id/update`    | update a record         |
+
+ 
 
 ## Links
 
@@ -83,10 +105,10 @@ Link to Trello
 
 The url to your repository and to your deployed project
 
-[Repository Link](http://github.com/)
+[Repository Link](https://github.com/elucserr/for-sweet-people-frontend)
 
 [Deploy Link](http://heroku.com/)
 
 ### Slides
 
-[Slides Link](http://slides.com/)
+[Slides Link](https://slides.com/elenalucas/deck/fullscreen)
