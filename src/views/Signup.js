@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import apiClient from "../services/apiClient";
 
 export default class Signup extends Component {
     render() {
