@@ -15,6 +15,10 @@ class ApiClient {
   login(body) {
     return this.apiClient.post("/login", body);
   }
+
+  getOptions(body) {
+    return this.apiClient.post("/home", body);
+  }
 }
 
 const apiClient = new ApiClient();

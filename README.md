@@ -58,7 +58,7 @@ Have effects on buttons and general views
 | :----: | --------- | -------------- | ------------------------------- |
 |  POST  | `/signup` | signup a user  | `{ username, password, email }` |
 |  POST  | `/login`  | login a user   | `{ username, password }`        |
-|  GET   | `/logout` | logout session |                                 |
+|  POST   | `/logout` | logout session |                                 |
 
 ## More Views
 
