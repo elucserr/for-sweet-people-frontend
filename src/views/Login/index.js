@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import apiClient from "../services/apiClient";
+
 
 export default class Login extends Component {
   state = {
@@ -7,8 +7,8 @@ export default class Login extends Component {
     password: "",
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = (event) => {
+    event.preventDefault();
     const { username, password } = this.state;
     const { onLogin } = this.props;
     if (username !== "" && password !== "") {
@@ -23,9 +23,9 @@ export default class Login extends Component {
     });
   };
 
-  handleChange = (e) => {
+  handleChange = (event) => {
     this.setState({
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
