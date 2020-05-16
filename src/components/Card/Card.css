@@ -1,0 +1,66 @@
+:root {
+    --primary: #ffffff;
+    --red: #C0433C;
+    --orange: #E79F7F;
+    --grey: #C7D0D8;
+    --green: #8c8f7f;
+    --dark: #222222;
+    --white: #ffffff;
+}
+
+.card {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 100;
+    border-radius: 10px;
+}
+
+
+/*card colors*/
+
+.card--primary--solid {
+    background-color: var(--primary);
+    color: var(--dark);
+    border: none;
+}
+
+.card--red--solid {
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+}
+
+.card--orange--solid {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+}
+
+.card--grey--solid {
+    background-color: var(--grey);
+    color: var(--white);
+    border: none;
+}
+
+.card--green--solid {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+}
+
+
+/* Card Sizes */
+
+.card--medium {
+    padding : 10 px 20 px;
+    font-size: 18px;
+}
+
+.card--small {
+    padding: 15px 30 px;
+    font-size: 20px;
+}
+
+.card--big {
+    padding: 20px 35 px;
+    font-size: 25px;
+}

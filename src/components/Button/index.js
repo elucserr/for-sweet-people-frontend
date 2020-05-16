@@ -2,14 +2,12 @@ import React from 'react';
 import './Button.css'
 
 const STYLES = [
-    "btn--primary--solid",
-    "btn--warning--solid",
-    "btn--danger--solid",
-    "btn--success--solid",
-    "btn--primary--outline",
-    "btn--warning--outline",
-    "btn--danger--outline",
-    "btn--success--outliine",
+    "btn--orange--solid",
+    "btn--white--solid",
+    "btn--white--solid--1",
+    "btn--white--solid--2",
+    "btn--white--solid--3",
+    "btn--white--solid--4",
 ]
 
 const SIZES = [
