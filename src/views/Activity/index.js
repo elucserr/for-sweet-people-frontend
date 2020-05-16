@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import Layout from '../Layout'
 
 class Activity extends Component {
 
@@ -41,7 +42,7 @@ class Activity extends Component {
   render() {
     const { type, km, time } = this.state;
     return (
-      <div>Activity</div>
+      <Layout>Activity</Layout>
     )
   }
 }

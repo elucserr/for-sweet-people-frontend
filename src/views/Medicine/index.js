@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import Layout from '../Layout'
 
 class Medicine extends Component {
 
@@ -41,7 +42,7 @@ class Medicine extends Component {
   render() {
     const { date, time, type } = this.state;
     return (
-      <div>Medicine</div>
+      <Layout>Medicine</Layout>
     )
   }
 }
