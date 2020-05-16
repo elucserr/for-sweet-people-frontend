@@ -1,0 +1,82 @@
+:root {
+    --primary: #222222;
+    --warning: #222222;
+    --danger: #222222;
+    --success: #222222;
+    --white: #222222;
+    --dark: #222222;
+}
+
+.btn {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 100;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px)
+}
+
+/*button colors*/
+
+.btn--primary--solid {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+}
+
+.btn--warning--solid {
+    background-color: var(--warning);
+    color: var(--dark);
+    border: none;
+}
+
+.btn--danger--solid {
+    background-color: var(--danger);
+    color: var(--white);
+    border: none;
+}
+
+.btn--success--solid {
+    background-color: var(--success);
+    color: var(--white);
+    border: none;
+}
+
+.btn--primary--outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn--warning--outline {
+    background-color: transparent;
+    color: var(--warning);
+    border: 2px solid var(--warning);
+}
+
+.btn--danger--outline {
+    background-color: transparent;
+    color: var(--danger);
+    border: 2px solid var(--danger);
+}
+
+.btn--success--outline {
+    background-color: transparent;
+    color: var(--success);
+    border: 2px solid var(--success);
+}
+
+/* Button Sizes */
+
+.btn--medium {
+    padding : 10 px 20 px;
+    font-size: 18px;
+}
+
+.btn--small {
+    padding: 15px 30 px;
+    font-size: 20px;
+}
