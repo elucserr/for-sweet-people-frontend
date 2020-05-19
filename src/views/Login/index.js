@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-// import apiClient from "../services/apiClient";
+import { withAuth } from "../context/authContext";
+import { Link } from 'react-router-dom';
 
-export default class Login extends Component {
+class Login extends Component {
   state = {
     username: "",
     password: "",
@@ -54,7 +55,10 @@ export default class Login extends Component {
           />
           <input type="submit" value="submit" />
         </form>
+        <p>Don't have an account?</p><Link to={'/signup'}><button>Sign Up</button></Link>
       </div>
     );
   }
 }
+
+export default withAuth(Login);
