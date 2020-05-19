@@ -27,7 +27,7 @@ export const Card = ({ children, type, cardStyle, cardSize}) => {
     : SIZES[0];
 
     return (
-        <div className={`btn ${checkCardStyle} ${checkCardSize}`} 
+        <div className={`card ${checkCardStyle} ${checkCardSize}`} 
          type={type}
         >
             {children}
