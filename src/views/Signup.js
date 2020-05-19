@@ -1,41 +1,34 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { withAuth } from "../context/authContext";
 import { Link } from 'react-router-dom';
 
-class Login extends Component {
-  state = {
+class Signup extends Component {
+	state = {
     username: "",
     password: "",
-  };
+	};
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { username, password } = this.state;
-    const { onLogin } = this.props;
-    if (username !== "" && password !== "") {
-      onLogin({ username, password });
-    }
-  };
-
-  cleanForm = () => {
-    this.setState({
-      username: "",
-      password: "",
-    });
-  };
-
-  handleChange = (e) => {
+	handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
-
-  render() {
+	handleSubmit = (e) => {
+    e.preventDefault();
+    const { history } = this.props;
+    const { username, password } = this.state;
+    const { onSignup } = this.props;
+    if ( username !== '' && password !== ''){
+      onSignup({username, password})
+    }
+    
+	}
+	render() {
     const { username, password } = this.state;
 
     return (
       <div>
-        <h1>Login</h1>
+        <h1>Signup</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -53,12 +46,11 @@ class Login extends Component {
             value={password}
             onChange={this.handleChange}
           />
-          <input type="submit" value="submit" />
+          <input type="submit" value="sign up" />
         </form>
-        <p>Don't have an account?</p><Link to={'/signup'}><button>Sign Up</button></Link>
+        <p>Already have an account?</p><Link to={'/login'}><button>Log In</button></Link> 
       </div>
     );
   }
 }
-
-export default withAuth(Login);
+export default withAuth(Signup);

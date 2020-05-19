@@ -1,14 +1,15 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
-// <PrivateRoute exact path={"/resorts/add"} isLoggedIn={isLoggedIn} component={AddResort} />
-function PrivateRoute({ children, isLoggedIn, ...rest }) {
+import { withAuth } from "../context/authContext";
+
+function PrivateRoute({ component: Comp, isLoggedIn, ...rest }) {
   return (
     <Route
       {...rest}
       render={(props) =>
         isLoggedIn ? (
-          children
+          <Comp {...props} />
         ) : (
           <Redirect
             to={{
@@ -22,4 +23,4 @@ function PrivateRoute({ children, isLoggedIn, ...rest }) {
   );
 }
 
-export default PrivateRoute;
+export default withAuth(PrivateRoute);

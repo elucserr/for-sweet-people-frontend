@@ -1,18 +1,20 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
-function AnonRoute({ children, isLoggedIn, ...rest }) {
+import { withAuth } from "../context/authContext";
+
+function AnonRoute({ component: Comp, isLoggedIn, ...rest }) {
   return (
     <Route
       {...rest}
-      render={({ location }) =>
+      render={(props) =>
         !isLoggedIn ? (
-          children
+          <Comp {...props} />
         ) : (
           <Redirect
             to={{
               pathname: "/protected",
-              state: { from: location },
+              state: { from: props.location },
             }}
           />
         )
@@ -21,4 +23,4 @@ function AnonRoute({ children, isLoggedIn, ...rest }) {
   );
 }
 
-export default AnonRoute;
+export default withAuth(AnonRoute);
