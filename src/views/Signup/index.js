@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import apiClient from "../services/apiClient";
+import { Link } from 'react-router-dom';
 
 export default class Signup extends Component {
   state = {
@@ -52,6 +53,10 @@ export default class Signup extends Component {
           />
           <input type="submit" value="submit" />
         </form>
+        <p>Have an account?</p>
+        <Link to={'/login'}>
+         <button>Log In</button>
+        </Link>
       </div>
     );
   }
