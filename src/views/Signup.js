@@ -46,7 +46,7 @@ class Signup extends Component {
             value={password}
             onChange={this.handleChange}
           />
-          <input type="submit" value="sign up" />
+          <input type="submit" value="signup" />
         </form>
         <p>Already have an account?</p><Link to={'/login'}><button>Log In</button></Link> 
       </div>
