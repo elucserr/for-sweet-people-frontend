@@ -1,76 +1,35 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
-import Login from "./views/Login";
+import AnonRoute from "./components/AnonRoute";
+import PrivateRoute from "./components/PrivateRoute";
+
+import Protected from "./views/Protected";
+import LoginWithAuth from "./views/Login";
+import SignupWithAuth from './views/Signup';
+
+import AuthProvider from "./context/authContext";
+
+import Navbar from "./components/Navbar";
+
 import Home from "./views/Home";
 
-import { AnonRoute, PrivateRoute } from "./components";
-
-import apiClient from "./services/apiClient";
-import Protected from "./views/Protected";
-
 class App extends Component {
-  state = {
-    isLoggedIn: false,
-    user: null,
-    isLoading: true,
-  };
-
-  componentDidMount() {
-    apiClient
-      .whoami()
-      .then((user) => {
-        this.setState({
-          isLoading: false,
-          isLoggedIn: true,
-          user,
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          isLoading: false,
-          isLoggedIn: false,
-          user: null,
-        });
-      });
-  }
-
-  handleLogin = ({ username, password }) => {
-    apiClient
-      .login({ username, password })
-      .then(({ data: user }) => {
-        this.setState({
-          isLoggedIn: true,
-          user,
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          isLoggedIn: false,
-          user: null,
-        });
-      });
-  };
-
   render() {
-    const { isLoggedIn, isLoading } = this.state;
     return (
-      <div>
-        {isLoading && <div> Loading.......</div>}
-        {!isLoading && (
+      <AuthProvider>
+        <div>
           <div className="App">
+            <Navbar />
             <Switch>
-              <Route exact path={"/"} component={Home} />
-              <AnonRoute exact path={"/login"} isLoggedIn={isLoggedIn}>
-                <Login onLogin={this.handleLogin} />
-              </AnonRoute>
-              <PrivateRoute exact path={"/protected"} isLoggedIn={isLoggedIn}>
-                <Protected />
-              </PrivateRoute>
+              <Route exact path={"/"} component={Home}/>
+              <AnonRoute exact path={"/login"} component={LoginWithAuth} />
+              <AnonRoute exact path={"/signup"} component={SignupWithAuth} />
+              <PrivateRoute exact path={"/protected"} component={Protected} />
             </Switch>
           </div>
-        )}
-      </div>
+        </div>
+      </AuthProvider>
     );
   }
 }
