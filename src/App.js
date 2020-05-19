@@ -1,19 +1,13 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import AnonRoute from "../src/views/AnonRoute";
-import PrivateRoute from "../src/views/PrivateRoute";
+import Login from "./views/Login";
+import Home from "./views/Home";
 
-import apiClient from "../src/services/apiClient";
-import Login from "../src/views/Login";
-import Signup from "../src/views/Signup";
-import Home from "../src/views/Home";
-import Activity from "../src/views/Activity";
-import Blood from "../src/views/Blood";
-import Diet from "../src/views/Diet";
-import Medicine from "../src/views/Medicine";
-import Profile from "../src/viewsProfile";
+import { AnonRoute, PrivateRoute } from "./components";
 
+import apiClient from "./services/apiClient";
+import Protected from "./views/Protected";
 
 class App extends Component {
   state = {
