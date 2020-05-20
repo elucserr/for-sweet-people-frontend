@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
-import AnonRoute from "./components/AnonRoute";
-import PrivateRoute from "./components/PrivateRoute";
+import AnonRoute from "./views/AnonRoute";
+import PrivateRoute from "./views/PrivateRoute";
 
 import Protected from "./views/Protected";
 import LoginWithAuth from "./views/Login";
@@ -10,9 +10,9 @@ import SignupWithAuth from './views/Signup';
 
 import AuthProvider from "./context/authContext";
 
-import Navbar from "./components/Navbar";
+import Nav from "./components/Nav"
 
-import Home from "./views/Home";
+import Home from "./views/Home"
 
 class App extends Component {
   render() {
@@ -20,7 +20,7 @@ class App extends Component {
       <AuthProvider>
         <div>
           <div className="App">
-            <Navbar />
+            <Nav/>
             <Switch>
               <Route exact path={"/"} component={Home}/>
               <AnonRoute exact path={"/login"} component={LoginWithAuth} />

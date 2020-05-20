@@ -1,4 +1,4 @@
-import axios from "axios";
+  import axios from "axios";
 
 class ApiClient {
   constructor() {
@@ -7,27 +7,28 @@ class ApiClient {
       withCredentials: true,
     });
   }
-
-  whoami() {
-    return this.apiClient.get("/whoami");
-  }
+  //Auth
 
   login(body) {
     return this.apiClient.post("/login", body);
   }
 
-  signup(body) {
-    return this.apiClient.post("/signup", body);
-  }
-  
-
-  getOptions(body) {
-    return this.apiClient.post("/home", body);
-  }
-
   logout() {
     return this.apiClient.get("/logout");
   }
+
+  whoami() {
+    return this.apiClient.get("/whoami");
+  }
+
+  signup(body) {
+    return this.apiClient.post('/signup', body);
+  }
+
+  getProtected() {
+    return this.apiClient.get("/protected");
+  }
+  
 }
 
 const apiClient = new ApiClient();

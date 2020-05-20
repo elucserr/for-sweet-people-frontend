@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-
 import apiClient from "../services/apiClient";
 
 export const AuthContext = React.createContext();
+
 
 export const withAuth = (Comp) => {
   return class WithAuth extends Component {

@@ -34,3 +34,5 @@ export const Card = ({ children, type, cardStyle, cardSize}) => {
         </div>
     )
 }
+
+export default Card;

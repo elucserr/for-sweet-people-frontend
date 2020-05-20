@@ -35,3 +35,5 @@ export const Button = ({ children, type, onClick, buttonStyle, buttonSize}) => {
         </button>
     )
 }
+
+export default Button;

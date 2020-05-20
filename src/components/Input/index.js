@@ -32,3 +32,5 @@ export const Input = ({ children, type, inputStyle, inputSize}) => {
         </div>
     )
 }
+
+export default Input;
