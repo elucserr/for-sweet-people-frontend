@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../context/authContext";
 import { Link } from 'react-router-dom';
-import Background from '../../components/Background';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
@@ -75,7 +74,6 @@ class Login extends Component {
         buttonSize="btn--small"
         value="login" />
         </Link>
-        <Background/>
       </div>
       </div>
     );
