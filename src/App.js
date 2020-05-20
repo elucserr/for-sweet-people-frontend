@@ -10,10 +10,9 @@ import SignupWithAuth from './views/Signup';
 
 import AuthProvider from "./context/authContext";
 
-import Nav from "./components/Nav";
 import Home from "./views/Home";
 import Options from "./views/Options";
-import User from "./views/Users";
+import User from "./views/User";
 import Blood from "./views/Blood";
 import Activity from "./views/Activity";
 import Medicine from "./views/Medicine";
@@ -25,7 +24,6 @@ class App extends Component {
       <AuthProvider>
         <div>
           <div className="App">
-            <Nav/>
             <Switch>
               <Route exact path={"/"} component={Home}/>
               <AnonRoute exact path={"/login"} component={LoginWithAuth} />

@@ -42,7 +42,7 @@ class Blood extends Component {
   render() {
     const { date, time, level } = this.state;
     return (
-      <Layout>Blood</Layout>
+      <Layout/>
     )
   }
 }
