@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withAuth } from "../context/authContext";
 import { Link } from 'react-router-dom';
-import Background from '../../components/Background';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
@@ -30,13 +29,13 @@ class Signup extends Component {
     const { username, password } = this.state;
 
     return (
-      <div>
+      <div className="background">
       <div className="signup-container">
-
-      </div>
-        <h1 className="app-name">F O R S W E E T P E O P L E</h1>
+      <h1 className="app-name">F O R S W E E T P E O P L E</h1>
         <form className="signup-form" onSubmit={this.handleSubmit}>
           <Input
+            inputStyle="input--white--outline"
+            inputSize="input--medium"
             type="text"
             name="username"
             id="username"
@@ -45,6 +44,8 @@ class Signup extends Component {
             onChange={this.handleChange}
           />
           <Input
+            inputStyle="input--white--outline"
+            inputSize="input--medium"
             type="password"
             name="password"
             id="password"
@@ -58,8 +59,15 @@ class Signup extends Component {
             buttonSize="btn--small"
             value="signup" />
         </form>
-        <p>Already have an account?</p><Link to={'/login'}><button>Log In</button></Link> 
-        <Background/>
+        <p>Already have an account?</p>
+        <Link to={'/login'}>
+         <Button onClick={() => {console.log('Clicked')}}
+           type="submit" 
+           buttonStyle="btn--primary--solid"
+           buttonSize="btn--small"
+           value="login" />
+        </Link> 
+      </div>
       </div>
     );
   }

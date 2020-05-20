@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { withAuth } from "../context/authContext";
 import { Link } from 'react-router-dom';
+import Background from '../../components/Background';
+import Button from '../../components/Button';
+import Input from '../../components/Input';
 
 class Login extends Component {
   state = {
@@ -8,8 +11,8 @@ class Login extends Component {
     password: "",
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = (event) => {
+    event.preventDefault();
     const { username, password } = this.state;
     const { onLogin } = this.props;
     if (username !== "" && password !== "") {
@@ -24,9 +27,9 @@ class Login extends Component {
     });
   };
 
-  handleChange = (e) => {
+  handleChange = (event) => {
     this.setState({
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
@@ -34,10 +37,13 @@ class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div>
-        <h1>Login</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
+      <div className="background">
+      <div className="login-container">
+      <h1 className="app-name">F O R S W E E T P E O P L E</h1>
+        <form className="login-form" onSubmit={this.handleSubmit}>
+          <Input
+            inputStyle="input--white--outline"
+            inputSize="input--medium"
             type="text"
             name="username"
             id="username"
@@ -45,7 +51,9 @@ class Login extends Component {
             value={username}
             onChange={this.handleChange}
           />
-          <input
+          <Input
+            inputStyle="input--white--outline"
+            inputSize="input--medium"
             type="password"
             name="password"
             id="password"
@@ -53,9 +61,22 @@ class Login extends Component {
             value={password}
             onChange={this.handleChange}
           />
-          <input type="submit" value="submit" />
+          <Button onClick={() => {console.log('Clicked')}}
+          type="submit"
+          buttonStyle="btn--primary--solid"
+          buttonSize="btn--small"
+          value="login" />
         </form>
-        <p>Don't have an account?</p><Link to={'/signup'}><button>Sign Up</button></Link>
+        <p>Don't have an account?</p>
+        <Link to={'/signup'}>
+        <Button onClick={() => {console.log('Clicked')}}
+        type="submit"
+        buttonStyle="btn--primary--solid"
+        buttonSize="btn--small"
+        value="login" />
+        </Link>
+        <Background/>
+      </div>
       </div>
     );
   }

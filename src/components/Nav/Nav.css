@@ -1,7 +1,13 @@
 .nav{
-
+    width: 375px;
+    height: 58px;
+    background-color: white;
 }
 
 .nav-link{
+    color: black;
+}
 
+.menu{
+    
 }

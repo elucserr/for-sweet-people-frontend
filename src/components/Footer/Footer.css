@@ -1,7 +1,9 @@
 .footer{
-
+    width: 375px;
+    height: 58px;
+    background-color: white;
 }
 
 .footer-link{
-    
+    color: black;
 }

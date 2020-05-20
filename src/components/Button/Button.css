@@ -1,0 +1,79 @@
+:root {
+    --warning: #222222;
+    --danger: #222222;
+    --success: #222222;
+    --white: #222222;
+    --dark: #222222;
+    --red: #C0433C;
+    --orange: #E79F7F;
+    --grey: #C7D0D8;
+    --green: #8c8f7f;
+}
+
+.btn {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 100;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px)
+}
+
+/*button colors*/
+
+.btn--orange--solid {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 20px;
+}
+
+.btn--white--solid {
+    background-color: var(--white);
+    color: var(--dark);
+    border: none;
+    border-radius: 15px;
+}
+
+.btn--white--solid--1 {
+    background-color: var(--white);
+    color: var(--red);
+    border: none;
+    border-radius: 15px;
+}
+
+.btn--white--solid--2 {
+    background-color: var(--white);
+    color: var(--orange);
+    border: none;
+    border-radius: 15px;
+}
+
+.btn--white--solid--3 {
+    background-color: var(--white);
+    color: var(--grey);
+    border: none;
+    border-radius: 15px;
+}
+
+.btn--white--solid--4 {
+    background-color: var(--white);
+    color: var(--green);
+    border: none;
+    border-radius: 15px;
+}
+
+
+/* Button Sizes */
+
+.btn--medium {
+    padding : 10 px 20 px;
+    font-size: 18px;
+}
+
+.btn--small {
+    padding: 15px 30 px;
+    font-size: 20px;
+}
