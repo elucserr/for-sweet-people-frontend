@@ -64,17 +64,17 @@ class Login extends Component {
           />
           <Button onClick={() => {console.log('Clicked')}}
           type="submit"
-          buttonStyle="btn--primary--solid"
+          buttonStyle="btn--orange--solid"
           buttonSize="btn--small"
-          value="login" />
+          value="login">LOGIN</Button>
         </form>
         <p className='question-login'>Don't have an account?</p>
         <Link to={'/signup'}>
         <Button onClick={() => {console.log('Clicked')}}
         type="submit"
-        buttonStyle="btn--primary--solid"
+        buttonStyle="btn--orange--solid"
         buttonSize="btn--small"
-        value="login" />
+        value="login">SIGNUP</Button>
         </Link>
       </div>
       </div>
