@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { withAuth } from "../../context/authContext";
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
-import Input from '../../components/Input';
+//import Input from '../../components/Input';
+import "./Login.css"
+
 
 class Login extends Component {
   state = {
@@ -40,7 +42,7 @@ class Login extends Component {
       <div className="login-container">
       <h1 className="app-name">F O R S W E E T P E O P L E</h1>
         <form className="login-form" onSubmit={this.handleSubmit}>
-          <Input
+          <input className="input-auth"
             inputStyle="input--white--outline"
             inputSize="input--medium"
             type="text"
@@ -50,7 +52,7 @@ class Login extends Component {
             value={username}
             onChange={this.handleChange}
           />
-          <Input
+          <input
             inputStyle="input--white--outline"
             inputSize="input--medium"
             type="password"
@@ -66,7 +68,7 @@ class Login extends Component {
           buttonSize="btn--small"
           value="login" />
         </form>
-        <p>Don't have an account?</p>
+        <p className='question-login'>Don't have an account?</p>
         <Link to={'/signup'}>
         <Button onClick={() => {console.log('Clicked')}}
         type="submit"

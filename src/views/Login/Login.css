@@ -1,15 +1,40 @@
 .background{
-    background-image: url(../../../public/images/background.jpg);
+background-image: url("./background.jpg");
 }
 
 .login-container{
-
+padding-top: 50px;
+padding-left: 20px;
+display: flex;
+flex-direction: column;
+width: 314px;
+height: 636px;
+align-items: center;
+justify-content:center;
 }
 
 .app-name{
-
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 4px;
 }
 
-.login-form{
-
+.question-login{
+font-weight: normal;
+font-size: 15px;
+line-height: 22px;
+display: flex;
+align-items: center;
+text-align: center;
 }
+
+.login-form {
+display: flex;
+flex-direction: column;
+}
+
