@@ -15,6 +15,7 @@ const STYLES = [
 const SIZES = [
     "btn--medium",
     "btn--small",
+    "btn--options"
 
 ]
 

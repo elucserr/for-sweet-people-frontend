@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import Layout from '../Layout'
+import Nav from '../../components/Nav';
+import Footer from '../../components/Footer';
+import './Activity.css'
+import Button from '../../components/Button';
 
 class Activity extends Component {
 
@@ -42,7 +45,48 @@ class Activity extends Component {
   render() {
     const { type, km, time } = this.state;
     return (
-      <Layout>Activity</Layout>
+      <div className="container-activity">
+      <Nav/>
+      <div><p className='title'>A C T I V I T Y</p></div>
+      <form className="login-form" onSubmit={this.handleSubmit}>
+          <input className="input-options"
+            //inputStyle="input--white--outline"
+            //inputSize="input--medium"
+            type="text"
+            name="type"
+            id="type"
+            placeholder="WRITE YOUR ACTIVITY"
+            value={type}
+            onChange={this.handleChange}
+          />
+          <input className="input-options"
+            //inputStyle="input--white--outline"
+            //inputSize="input--medium"
+            type="number"
+            name="km"
+            id="km"
+            placeholder="KM"
+            value={km}
+            onChange={this.handleChange}
+          />
+          <input className="input-options"
+            //inputStyle="input--white--outline"
+            //inputSize="input--medium"
+            type="time"
+            name="time"
+            id="time"
+            placeholder="LEVEL OF GLUCOSE"
+            value={time}
+            onChange={this.handleChange}
+          />
+          <Button onClick={() => {console.log('Clicked')}}
+          type="add"
+          buttonStyle="btn--white--solid--3"
+          buttonSize="btn--options"
+          value="login">ADD</Button>
+        </form>
+      <Footer/>
+      </div>
     )
   }
 }

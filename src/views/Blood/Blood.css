@@ -1,0 +1,23 @@
+.container-blood{
+   width: 375px;
+   height: 700px;
+   background-color:#C0433C;
+   text-align: center;
+   justify-content: center;
+}
+
+.input-options{
+width: 300px;
+height: 30px;
+box-sizing: border-box;
+border-radius: 10px;
+font-family:'Alegreya Sans SC', sans-serif;
+text-align: center;
+margin: 5px;
+
+
+}
+
+.title{
+    color:white;
+}
