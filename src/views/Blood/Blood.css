@@ -1,6 +1,4 @@
 .container-blood{
-   width: 375px;
-   height: 700px;
    background-color:#C0433C;
    text-align: center;
    justify-content: center;
@@ -13,11 +11,19 @@ box-sizing: border-box;
 border-radius: 10px;
 font-family:'Alegreya Sans SC', sans-serif;
 text-align: center;
-margin: 5px;
-
-
+padding: 10px;
 }
 
 .title{
+    padding-top: 50px;
+    padding-bottom: 20px;
     color:white;
 }
+
+.login-form{
+    width: 375px;
+    height: 520px;
+   
+    
+}
+

@@ -55,7 +55,7 @@
     color: var(--red);
     border: none;
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .btn--white--solid--2 {
@@ -63,7 +63,7 @@
     color: var(--orange);
     border: none;
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .btn--white--solid--3 {
@@ -71,7 +71,7 @@
     color: var(--grey);
     border: none;
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .btn--white--solid--4 {
@@ -79,6 +79,7 @@
     color: var(--green);
     border: none;
     border-radius: 15px;
+    margin-top: 30px;
 }
 
 .btn--transparent {
