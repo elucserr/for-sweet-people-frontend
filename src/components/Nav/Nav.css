@@ -1,13 +1,18 @@
 .nav{
-    width: 375px;
-    height: 58px;
+    padding: 15px;
     background-color: white;
+    color: black;
+    align-items: center;
+    margin-bottom: 15%;
+    margin-top: -5%;
+    
+    
 }
 
 .nav-link{
     color: black;
 }
-
-.menu{
-    
+.img{
+    size: 10px;
 }
+

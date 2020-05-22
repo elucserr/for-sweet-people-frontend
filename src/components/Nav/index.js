@@ -7,8 +7,10 @@ class Nav extends Component {
     render() {
         return(
             <nav className="nav">
-                <img src="../../../public/images/menu.png" alt="menu" className="menu"/>
-                <Link className='nav-link' to='/'>F O R S W E E T P E O P L E</Link>
+                <Link className='nav-link' to='/users/:id'>
+                 <img src="./menu.png" alt="" className="menu"/>
+                </Link>
+                <Link className='nav-link' to='/options'>F O R S W E E T P E O P L E</Link>
             </nav>
         )
     }

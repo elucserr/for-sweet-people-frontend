@@ -2,8 +2,15 @@
     width: 375px;
     height: 58px;
     background-color: white;
+    
+
 }
 
 .footer-link{
     color: black;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    line-height: 50px;
+
 }
