@@ -9,6 +9,7 @@ const STYLES = [
     "btn--white--solid--3",
     "btn--white--solid--4",
     "btn--transparent",
+    "btn--green--solid"
 ]
 
 const SIZES = [

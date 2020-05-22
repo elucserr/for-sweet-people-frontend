@@ -2,7 +2,7 @@
     --warning: #222222;
     --danger: #222222;
     --success: #222222;
-    --white: #C7D0D8;
+    --white: #ffffff;
     --dark: #222222;
     --red: #C0433C;
     --orange: #E79F7F;
@@ -26,6 +26,15 @@
 
 .btn--orange--solid {
     background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    
+}
+
+.btn--green--solid {
+    background-color: var(--green);
     color: var(--white);
     border: none;
     border-radius: 20px;

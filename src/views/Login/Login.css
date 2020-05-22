@@ -31,17 +31,6 @@ align-items: center;
 text-align: center;
 }
 
-.question-login{
-font-weight: normal;
-font-size: 15px;
-line-height: 22px;
-display: flex;
-align-items: center;
-text-align: center;
-}
-
-
-
 .input-auth {
 width: 216px;
 height: 37px;

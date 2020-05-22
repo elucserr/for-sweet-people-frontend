@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { withAuth } from "../../context/authContext";
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
-import Input from '../../components/Input';
+//import Input from '../../components/Input';
+import "./Signup.css"
 
 class Signup extends Component {
 	state = {
@@ -33,39 +34,39 @@ class Signup extends Component {
       <div className="signup-container">
       <h1 className="app-name">F O R S W E E T P E O P L E</h1>
         <form className="signup-form" onSubmit={this.handleSubmit}>
-          <Input
-            inputStyle="input--white--outline"
-            inputSize="input--medium"
+          <input className="input-signup"
+            //inputStyle="input--white--outline"
+            //inputSize="input--medium"
             type="text"
             name="username"
             id="username"
-            placeholder="username"
+            placeholder="USERNAME"
             value={username}
             onChange={this.handleChange}
           />
-          <Input
-            inputStyle="input--white--outline"
-            inputSize="input--medium"
+          <input className="input-signup"
+            //inputStyle="input--white--outline"
+            //inputSize="input--medium"
             type="password"
             name="password"
             id="password"
-            placeholder="password"
+            placeholder="PASSWORD"
             value={password}
             onChange={this.handleChange}
           />
           <Button onClick={() => {console.log('Clicked')}}
             type="submit" 
-            buttonStyle="btn--primary--solid"
+            buttonStyle="btn--green--solid"
             buttonSize="btn--small"
-            value="signup" />
+            value="signup">SIGNUP</Button>
         </form>
-        <p>Already have an account?</p>
+        
         <Link to={'/login'}>
          <Button onClick={() => {console.log('Clicked')}}
            type="submit" 
-           buttonStyle="btn--primary--solid"
-           buttonSize="btn--small"
-           value="login" />
+           buttonStyle="btn--transparent"
+           buttonSize="btn--LINE"
+           value="login">Already have an account?</Button>
         </Link> 
       </div>
       </div>
