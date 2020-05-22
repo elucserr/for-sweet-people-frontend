@@ -47,7 +47,7 @@ class Medicine extends Component {
     return (
       <div className="container-medicine">
       <Nav/>
-      <div><p className='title'>M E D I C I NE</p></div>
+      <div><p className='title'>M E D I C I N E</p></div>
       <form className="login-form" onSubmit={this.handleSubmit}>
           <input className="input-options"
             //inputStyle="input--white--outline"

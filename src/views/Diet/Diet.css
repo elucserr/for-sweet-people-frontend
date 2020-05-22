@@ -1,0 +1,23 @@
+.container-diet{
+    width: 375px;
+    height: 700px;
+    background-color:#8c8f7f;
+    text-align: center;
+    justify-content: center;
+ }
+ 
+ .input-options{
+ width: 300px;
+ height: 30px;
+ box-sizing: border-box;
+ border-radius: 10px;
+ font-family:'Alegreya Sans SC', sans-serif;
+ text-align: center;
+ margin: 5px;
+ 
+ 
+ }
+ 
+ .title{
+     color:white;
+ }

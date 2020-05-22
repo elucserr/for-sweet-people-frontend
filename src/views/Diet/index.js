@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import Layout from '../Layout'
+import Nav from '../../components/Nav';
+import Footer from '../../components/Footer';
+import './Diet.css'
+import Button from '../../components/Button';
 
 class Diet extends Component {
 
@@ -40,9 +43,50 @@ class Diet extends Component {
   }
 
   render() {
-    const { date, time, aliment } = this.state;
+    const { date, type, aliment } = this.state;
     return (
-      <Layout>Diet</Layout>
+      <div className="container-diet">
+      <Nav/>
+      <div><p className='title'>N U T R I T I O N</p></div>
+      <form className="login-form" onSubmit={this.handleSubmit}>
+          <input className="input-options"
+            //inputStyle="input--white--outline"
+            //inputSize="input--medium"
+            type="date"
+            name="date"
+            id="date"
+            placeholder="DATE"
+            value={date}
+            onChange={this.handleChange}
+          />
+          <input className="input-options"
+            //inputStyle="input--white--outline"
+            //inputSize="input--medium"
+            type="text"
+            name="type"
+            id="type"
+            placeholder="TIME OF DAY"
+            value={type}
+            onChange={this.handleChange}
+          />
+          <input className="input-options"
+            //inputStyle="input--white--outline"
+            //inputSize="input--medium"
+            type="text"
+            name="aliment"
+            id="aliment"
+            placeholder="WHAT DID YOU EAT?"
+            value={aliment}
+            onChange={this.handleChange}
+          />
+          <Button onClick={() => {console.log('Clicked')}}
+          type="add"
+          buttonStyle="btn--white--solid--4"
+          buttonSize="btn--options"
+          value="login">ADD</Button>
+        </form>
+      <Footer/>
+      </div>
     )
   }
 }
