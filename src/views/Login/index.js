@@ -43,22 +43,22 @@ class Login extends Component {
       <h1 className="app-name">F O R S W E E T P E O P L E</h1>
         <form className="login-form" onSubmit={this.handleSubmit}>
           <input className="input-auth"
-            inputStyle="input--white--outline"
-            inputSize="input--medium"
+            //inputStyle="input--white--outline"
+            //inputSize="input--medium"
             type="text"
             name="username"
             id="username"
-            placeholder="username"
+            placeholder="USERNAME"
             value={username}
             onChange={this.handleChange}
           />
-          <input
-            inputStyle="input--white--outline"
-            inputSize="input--medium"
+          <input className="input-auth"
+            //inputStyle="input--white--outline"
+            //inputSize="input--medium"
             type="password"
             name="password"
             id="password"
-            placeholder="password"
+            placeholder="PASSWORD"
             value={password}
             onChange={this.handleChange}
           />
@@ -68,13 +68,13 @@ class Login extends Component {
           buttonSize="btn--small"
           value="login">LOGIN</Button>
         </form>
-        <p className='question-login'>Don't have an account?</p>
+    
         <Link to={'/signup'}>
         <Button onClick={() => {console.log('Clicked')}}
         type="submit"
-        buttonStyle="btn--orange--solid"
-        buttonSize="btn--small"
-        value="login">SIGNUP</Button>
+        buttonStyle="btn--transparent"
+        buttonSize="btn--line"
+        value="login">Don't have an account?</Button>
         </Link>
       </div>
       </div>

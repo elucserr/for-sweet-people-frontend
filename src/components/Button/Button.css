@@ -15,6 +15,7 @@
     font-weight: 100;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin: 10px;
 }
 
 .btn:hover {
@@ -28,6 +29,8 @@
     color: var(--white);
     border: none;
     border-radius: 20px;
+    margin-top: 10px;
+    
 }
 
 .btn--white--solid {
@@ -35,6 +38,7 @@
     color: var(--dark);
     border: none;
     border-radius: 15px;
+    margin-top: 10px;
 }
 
 .btn--white--solid--1 {
@@ -42,6 +46,7 @@
     color: var(--red);
     border: none;
     border-radius: 15px;
+    margin-top: 10px;
 }
 
 .btn--white--solid--2 {
@@ -49,6 +54,7 @@
     color: var(--orange);
     border: none;
     border-radius: 15px;
+    margin-top: 10px;
 }
 
 .btn--white--solid--3 {
@@ -56,11 +62,18 @@
     color: var(--grey);
     border: none;
     border-radius: 15px;
+    margin-top: 10px;
 }
 
 .btn--white--solid--4 {
     background-color: var(--white);
     color: var(--green);
+    border: none;
+    border-radius: 15px;
+}
+
+.btn--transparent {
+    color: black;
     border: none;
     border-radius: 15px;
 }
@@ -76,6 +89,13 @@
 .btn--small {
     padding: 15px 30 px;
     font-size: 15px;
-    width: 119px;
+    width: 100px;
+    height: 37px;
+}
+
+.btn--line {
+    padding: 20px 30 px;
+    font-size:5px;
+    width: 200px;
     height: 37px;
 }
