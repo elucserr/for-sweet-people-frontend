@@ -2,21 +2,20 @@ import React from 'react';
 import './Card.css'
 
 const STYLES = [
-    "card--primary--solid",
-    "card--red--solid",
-    "card--orange--solid",
-    "card--grey--solid",
-    "card--green--solid",
+    "card--red",
+    "card--orange",
+    "card--green",
+    "card--grey",
+    "card--white",
 ]
 
 const SIZES = [
     "card--medium",
     "card--small",
-    "card--big",
 
 ]
 
-export const Card = ({ children, type, cardStyle, cardSize}) => {
+export const Card = ({ children, cardStyle, cardSize}) => {
 
     const checkCardStyle = STYLES.includes(cardStyle) 
     ? cardStyle 
@@ -27,11 +26,12 @@ export const Card = ({ children, type, cardStyle, cardSize}) => {
     : SIZES[0];
 
     return (
-        <div className={`card ${checkCardStyle} ${checkCardSize}`} 
-         type={type}
-        >
-            {children}
-        </div>
+         <div className={`card ${checkCardStyle} ${checkCardSize}`}>
+            <p className="text">{children}</p>
+         </div>
+    
+        
+        
     )
 }
 

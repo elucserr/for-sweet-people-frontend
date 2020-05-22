@@ -1,0 +1,29 @@
+.background-options{
+   background-color:#EBEFF1;
+   text-align: center;
+   justify-content: center;
+   width: 375px;
+   height: 700px;
+   padding-top: 20px;
+}
+  
+
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin-top: 25%;
+  }
+  .grid-item {
+    flex: 1 1 calc(100% - 50px);
+    
+  }
+  .grid-item:nth-child(odd) {
+    flex: 0 0 50px;
+    
+  }
+
+  .text{
+      line-height: 200px;
+  }
