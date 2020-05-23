@@ -50,9 +50,11 @@ class User extends Component {
 
       switch (status) {
           case STATUS.LOADING:
-              return <div>
+              return <div className="loading-container">
                   <Nav />
                   <h1>LOADING</h1>
+                  <Footer/>
+                
               </div>;
           case STATUS.LOADED:
               return <div className="user-container">
@@ -101,9 +103,12 @@ class User extends Component {
         
               </div>
           case STATUS.ERROR:
-              return <div>
+              return <div className="error-container">
                   <Nav />
-                  {error}</div>
+                  <h1>ERROR</h1>
+                  <Footer/>
+                  </div>
+
           default:
               break;
       }

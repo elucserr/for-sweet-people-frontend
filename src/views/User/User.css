@@ -7,6 +7,27 @@
     color:black
  }
 
+.error-container{
+    background-color: #C0433C;
+    padding-top: 80%;
+    text-align: center;
+    width: 375px;
+    height: 536px;
+    color: white;
+    
+ }
+
+
+.loading-container{
+    background-color: #8c8f7f;
+    padding-top: 80%;
+    text-align: center;
+    width: 375px;
+    height: 536px;
+    color: white;
+    
+ }
+
  .user-intro{
 
  }
