@@ -12,8 +12,11 @@
 
 }
 .menu{
-    size: 10px;
     position: fixed;
     left: 15px;
+    width: 6%;
+    height: auto;
+    position: fixed;
+    top: 10px;
+    left: 30px;
 }
-
