@@ -81,10 +81,6 @@ class User extends Component {
                  <span className="">{user.password}</span>
                 </li>
                 <li className="user-data">
-                 <span className="">EMAIL:</span>
-                 <span className="">{user.email}</span>
-                </li>
-                <li className="user-data">
                  <span className="">TYPE OF DIABETES:</span>
                  <span className="">{user.typeOfDiabetes}</span>
                 </li>
