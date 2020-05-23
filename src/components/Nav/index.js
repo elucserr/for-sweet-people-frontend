@@ -8,7 +8,7 @@ class Nav extends Component {
         return(
             <nav className="nav">
                 <Link className='nav-link' to='/users/:id'>
-                 <img src="./menu.png" alt="" className="menu"/>
+                 <img src="/images/menu.png" alt="m" className="menu"/>
                 </Link>
                 <Link className='nav-link' to='/options'>F O R S W E E T P E O P L E</Link>
             </nav>

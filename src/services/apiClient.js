@@ -6,7 +6,9 @@ class ApiClient {
       baseURL: process.env.REACT_APP_BACKEND_URI,
       withCredentials: true,
     });
+    console.log(process.env.REACT_APP_BACKEND_URI)
   }
+ 
   //Auth
 
   login(body) {
