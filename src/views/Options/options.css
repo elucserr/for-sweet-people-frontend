@@ -4,7 +4,6 @@
    justify-content: center;
    width: 375px;
    height: 700px;
-   padding-top: 20px;
 }
   
 
@@ -13,7 +12,9 @@
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
-    padding-bottom: 20px;
+    position: fixed;
+    top: 70px;
+    
   }
   .grid-item {
     flex:  1 calc(100% - 50px);

@@ -85,7 +85,7 @@ class Blood extends Component {
           buttonSize="btn--options"
           value="login">ADD</Button>
         </form>
-      <Footer/>
+        <Footer/>
       </div>
       
     )
