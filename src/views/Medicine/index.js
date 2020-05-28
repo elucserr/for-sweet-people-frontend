@@ -94,7 +94,7 @@ class Medicine extends Component {
       </div>
         
      
-       <Footer/>
+      <div className="footer"><Footer/></div>
     </div>
      
     );

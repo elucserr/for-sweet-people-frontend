@@ -78,9 +78,9 @@ class Diet extends Component {
   render() {
     return (
     <div>
-     <div className="container-aliment">
+     <div className="container-diet">
       <Nav/>
-      <div><p className='title'>A L I M E N T S</p></div>
+      <div><p className='title'>N U T R I T I O N</p></div>
       <AddDiet
         onSubmit={ this.handleSubmit } 
         onChange= {this.handleChange}
@@ -92,9 +92,8 @@ class Diet extends Component {
        {this.renderRecords()}
       
       </div>
-        
-     
-       <Footer/>
+      <div className="footer"><Footer/></div>
+       
     </div>
      
     );
