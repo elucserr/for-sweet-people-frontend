@@ -1,93 +1,103 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import apiClient from '../../services/apiClient';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
+import Square from '../../components/Square';
+import AddActivity  from './AddActivity';
 import './Activity.css'
-import Button from '../../components/Button';
 
 class Activity extends Component {
+  state = {
+    type: "",
+    km: "",
+    time: "",
+    activity: [],
+  };
 
-  constructor(){
-    super()
-    this.state = {
-      type: '',
-      km: '',
-      time: ''
-    }
-  }
-
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    axios
-    .post("https://api-forsweetpeople.herokuapp.com/activity", this.state)
-    .then(response => {
-    })
-    .catch((error) => {
-      this.setState({
-        error: error,
+  loadRecords = () => {
+    apiClient
+      .getAllRecords()
+      .then(({ data }) => {
+        this.setState({
+          activity: data,
+        });
       })
-    })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-    this.setState({
-      type: '',
-      km: '',
-      time: ''
-    });
+  componentDidMount() {
+    this.loadRecords();
   }
+
+  handleDelete = (id) => {
+    apiClient
+      .deleteRecord(id)
+      .then(() => {
+        console.log("done");
+        this.loadRecords();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { type, km, time } = this.state;
+    apiClient
+      .createRecord({ type, km, time })
+      .then((res) => {
+        const newActivity = this.state.activity
+        newActivity.push(res.data)
+        this.setState({
+          activity: newActivity
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  renderRecords = () => {
+    const { activity } = this.state;
+    return activity.map((activity, index) => {
+      return (
+        <Square key={index} item={activity} handleDelete={this.handleDelete} />
+      );
+    });
+  };
 
   render() {
-    const { type, km, time } = this.state;
     return (
-      <div className="container-activity">
+    <div>
+     <div className="container-activity">
       <Nav/>
       <div><p className='title'>A C T I V I T Y</p></div>
-      <form className="login-form" onSubmit={this.handleSubmit}>
-          <input className="input-options"
-            //inputStyle="input--white--outline"
-            //inputSize="input--medium"
-            type="text"
-            name="type"
-            id="type"
-            placeholder="WRITE YOUR ACTIVITY"
-            value={type}
-            onChange={this.handleChange}
-          />
-          <input className="input-options"
-            //inputStyle="input--white--outline"
-            //inputSize="input--medium"
-            type="number"
-            name="km"
-            id="km"
-            placeholder="KM"
-            value={km}
-            onChange={this.handleChange}
-          />
-          <input className="input-options"
-            //inputStyle="input--white--outline"
-            //inputSize="input--medium"
-            type="time"
-            name="time"
-            id="time"
-            placeholder="LEVEL OF GLUCOSE"
-            value={time}
-            onChange={this.handleChange}
-          />
-          <Button onClick={() => {console.log('Clicked')}}
-          type="add"
-          buttonStyle="btn--white--solid--3"
-          buttonSize="btn--options"
-          value="login">ADD</Button>
-        </form>
-      <Footer/>
+      <AddActivity
+        onSubmit={ this.handleSubmit } 
+        onChange= {this.handleChange}
+        date= {this.state.type}
+        time= {this.state.km}
+        level= {this.state.time}
+        />
+      
+       {this.renderRecords()}
+      
       </div>
-    )
+        
+     
+       <Footer/>
+    </div>
+     
+    );
   }
 }
 
