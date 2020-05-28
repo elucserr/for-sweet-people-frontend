@@ -31,15 +31,15 @@ class ApiClient {
     return this.apiClient.get("/protected");
   }
 
-  getBloodRecords() {
+  getAllRecords() {
     return this.apiClient.get("/blood");
   }
 
-  createBloodRecord(body) {
+  createRecord(body) {
     return this.apiClient.post("/blood", body);
   }
 
-  deleteBloodRecord(id) {
+  deleteRecord(id) {
     return this.apiClient.delete(`/blood/${id}`);
   }
 }
