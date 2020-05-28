@@ -94,12 +94,11 @@ class Blood extends Component {
         time= {this.state.time}
         level= {this.state.level}
         />
-       </div>
-       <div className="container-records"> 
-        <ul>
-        <Square>{this.renderRecords()}</Square>
-        </ul>
-       </div>
+      
+      <Square>{this.renderRecords()}</Square>
+      </div>
+        
+     
        <Footer/>
     </div>
      
