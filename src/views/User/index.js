@@ -59,7 +59,7 @@ class User extends Component {
               
               <div className="user-intro">
               <div className="user-image">
-              <img src="./images/admin.png" alt="menu" className="profile"/>
+              <div className="profile"/>
               </div>
               <div className="user-name">
               <p className="user-title">{user.username}</p>

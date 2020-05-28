@@ -10,7 +10,7 @@ const SIZES = [
 
 ]
 
-export const Card = ({ children, squareStyle, squareSize}) => {
+export const Card = ({ children, squareStyle, squareSize, item, handleDelete}) => {
 
     const checkSquareStyle = STYLES.includes(squareStyle) 
     ? squareStyle 
@@ -22,13 +22,17 @@ export const Card = ({ children, squareStyle, squareSize}) => {
 
     return (
          <div className={`card ${checkSquareStyle} ${checkSquareSize}`}>
-            <p className="text">{children}</p>
-            <p className="text">{children}</p>
-            <p className="text">{children}</p>
+            <p className="text">new</p>
+            {item.level}
+            {item.time}
+            <button
+              onClick={(e) => {
+                handleDelete(item._id);
+              }}
+            >
+              delete
+            </button>
          </div>
-    
-        
-        
     )
 }
 

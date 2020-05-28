@@ -51,12 +51,15 @@ class Blood extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { history } = this.props;
     const { date, time, level } = this.state;
     apiClient
       .createRecord({ date, time, level })
       .then((res) => {
-        history.push("/blood");
+        const newBlood = this.state.blood
+        newBlood.push(res.data)
+        this.setState({
+          blood: newBlood
+        })
       })
       .catch((error) => {
         console.log(error);
@@ -67,16 +70,7 @@ class Blood extends Component {
     const { blood } = this.state;
     return blood.map((blood, index) => {
       return (
-        <li key={index}>
-          {blood.name}
-          <button
-            onClick={(e) => {
-              this.handleDelete(blood._id);
-            }}
-          >
-            delete
-          </button>
-        </li>
+        <Square key={index} item={blood} handleDelete={this.handleDelete} />
       );
     });
   };
@@ -95,7 +89,8 @@ class Blood extends Component {
         level= {this.state.level}
         />
       
-      <Square>{this.renderRecords()}</Square>
+       {this.renderRecords()}
+      
       </div>
         
      

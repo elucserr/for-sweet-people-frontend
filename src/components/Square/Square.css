@@ -17,7 +17,7 @@
 
 .square--white {
     background-color: var(--dark);
-    color: var(--dark);
+    color: var(--white);
     border: none;
 }
 
