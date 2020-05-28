@@ -1,0 +1,35 @@
+:root {
+    --primary: #ffffff;
+    --red: #C0433C;
+    --orange: #E79F7F;
+    --grey: #C7D0D8;
+    --green: #8c8f7f;
+    --dark: #222222;
+    --white: #ffffff;
+}
+
+.square {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 100;
+}
+
+/*square colors*/
+
+.square--white {
+    background-color: var(--white);
+    color: var(--dark);
+    border: none;
+}
+
+
+/* Card Sizes */
+
+.square--medium {
+    font-size: 18px;
+    border-radius: 10px;
+    width: 69px;
+    height: 72px; 
+    margin: 2px;
+}
+
+

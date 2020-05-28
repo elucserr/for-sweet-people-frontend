@@ -1,11 +1,80 @@
 .user-container{
-    background-color: white;
+    position: fixed;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
     width: 320px;
     height: 536px;
     text-align: center;
     justify-content: center;
     color:black
+    
  }
+
+
+ .user-intro{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 100px;
+    left: 50px;
+    
+ }
+
+ .profile{
+    border:1px solid;
+    width: 80px;
+    height: 80px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    
+ }
+
+ .user-name{
+    display: flex;
+    flex-direction: column;
+ }
+
+ .buttons{
+ display: flex;
+ flex-direction: row;
+
+
+ }
+
+.user-title{
+font-weight: bolder;
+font-size: 30px;
+line-height: 17px;
+justify-content: right;
+top: 100px;
+left: 50px;
+
+} 
+
+.user-form{
+
+}
+
+.user-list{
+
+}
+
+.user-data{
+list-style: none;
+
+}
+
+.fixed-title{
+
+}
+
+
+.non-fixed-title{
+
+}
 
 .error-container{
     background-color: #C0433C;
@@ -27,23 +96,3 @@
     color: white;
     
  }
-
- .user-intro{
-
- }
-
-.user-title{
-
-} 
-
-.user-form{
-
-}
-
-.user-list{
-
-}
-
-.user-data{
-
-}

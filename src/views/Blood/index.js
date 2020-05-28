@@ -1,46 +1,89 @@
 import React, { Component } from "react";
-import axios from 'axios';
+//import axios from 'axios';
+import apiClient from '../../services/apiClient';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
+import Square from '../../components/Square';
 import './Blood.css'
 import Button from '../../components/Button';
 
 class Blood extends Component {
 
-  constructor(){
-    super()
-    this.state = {
-      date: '',
-      time: '',
-      level: ''
-    }
-  }
+  state = {
+    date: "",
+    time: "",
+    level: "",
+    blood: [],
+  };
 
-  handleChange = (event) => {
+  handleChange = (e) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [e.target.name]: e.target.value,
     });
-  }
+  };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    axios
-    .post("https://api-forsweetpeople.herokuapp.com/blood", this.state)
-    .then(response => {
-    })
-    .catch((error) => {
-      this.setState({
-        error: error,
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { history } = this.props;
+    const { date, time, level } = this.state;
+    apiClient
+      .createBloodRecord({ date, time, level })
+      .then((res) => {
+        history.push("/blood");
       })
-    })
-
-    this.setState({
-      date: '',
-      time: '',
-      level: ''
-    });
-  }
+      .catch((error) => {
+        console.log(error);
+      });
+    };
+      
+  loadRecords = () => {
+        apiClient
+          .getBloodRecords()
+          .then(({ data }) => {
+            this.setState({
+              blood: data,
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+    
+  componentDidMount() {
+        this.loadRecords();
+      }
+    
+  handleDelete = (id) => {
+        apiClient
+          .deleteBloodRecord(id)
+          .then(() => {
+            console.log("done");
+            this.loadRecords();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+    
+  renderRecords = () => {
+        const { blood } = this.state;
+        return blood.map((blood, index) => {
+          return (
+            <li key={index}>
+              {blood.date}
+              <button
+                onClick={(e) => {
+                  this.handleDelete(blood._id);
+                }}
+              >
+                delete
+              </button>
+            </li>
+          );
+        });
+      };
+  
+ 
 
   render() {
     const { date, time, level } = this.state;
@@ -85,6 +128,12 @@ class Blood extends Component {
           buttonSize="btn--options"
           value="login">ADD</Button>
         </form>
+        <div>
+        <h1>Listado de Record</h1>
+        <ul>
+        <Square>{this.renderRecords()}</Square>
+        </ul>
+      </div>
         <Footer/>
       </div>
       

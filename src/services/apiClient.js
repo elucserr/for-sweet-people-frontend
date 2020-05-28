@@ -30,7 +30,18 @@ class ApiClient {
   getProtected() {
     return this.apiClient.get("/protected");
   }
-  
+
+  getBloodRecords() {
+    return this.apiClient.get("/blood");
+  }
+
+  createBloodRecord(body) {
+    return this.apiClient.post("/blood", body);
+  }
+
+  deleteBloodRecord(id) {
+    return this.apiClient.delete(`/blood/${id}`);
+  }
 }
 
 const apiClient = new ApiClient();

@@ -62,11 +62,13 @@ class Login extends Component {
             value={password}
             onChange={this.handleChange}
           />
+          
           <Button onClick={() => {console.log('Clicked')}}
           type="submit"
           buttonStyle="btn--orange--solid"
           buttonSize="btn--small"
           value="login">LOGIN</Button>
+          
         </form>
     
         <Link to={'/signup'}>

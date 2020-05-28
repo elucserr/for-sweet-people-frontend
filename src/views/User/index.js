@@ -1,19 +1,17 @@
 import React, { Component } from "react";
-import axios from 'axios';
+//import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
-import './User.css'
+import './User.css';
 import Button from '../../components/Button';
-import apiClient from "../../services/apiClient";
-//import apiClient from '../../services/apiClient';
+import apiClient from '../../services/apiClient';
 
 const STATUS = {
   LOADING: 'LOADING',
   LOADED: 'LOADED',
   ERROR: 'ERROR'
 }
-
 
 class User extends Component {
   constructor() {
@@ -58,9 +56,14 @@ class User extends Component {
               </div>;
           case STATUS.LOADED:
               return <div className="user-container">
-              <Nav/>
+              
               <div className="user-intro">
-               <p className="user-title">{user.username}</p>
+              <div className="user-image">
+              <img src="./images/admin.png" alt="menu" className="profile"/>
+              </div>
+              <div className="user-name">
+              <p className="user-title">{user.username}</p>
+               <div className="buttons">
                <Link to={'/profile/edit'}>
                  <Button onClick={() => {console.log('Clicked')}}
                    type="submit" 
@@ -68,34 +71,43 @@ class User extends Component {
                    buttonSize="btn--small"
                    value="edit">EDIT PROFILE</Button>
                 </Link> 
+                <Link to={'/protected'}>
+                 <Button onClick={() => {console.log('Clicked')}}
+                   type="submit" 
+                   buttonStyle="btn--orange--solid"
+                   buttonSize="btn--small"
+                   value="edit">LOGOUT</Button>
+                </Link>
+               </div>
+              </div>
               </div>
               <div className="user-form">
                <ul className="user-list">
         
                <li className="user-data">
-                 <span className="">NAME:</span>
-                 <span className="">{user.username}</span>
+                 <span className="fixed-title">NAME:</span>
+                 <span className="non-fixed-title">{user.username}</span>
                 </li>
                 <li className="user-data">
-                 <span className="">PASSWORD:</span>
-                 <span className="">{user.password}</span>
+                 <span className="fixed-title">PASSWORD:</span>
+                 <span className="non-fixed-title">{user.password}</span>
                 </li>
                 <li className="user-data">
-                 <span className="">TYPE OF DIABETES:</span>
-                 <span className="">{user.typeOfDiabetes}</span>
+                 <span className="fixed-title">TYPE OF DIABETES:</span>
+                 <span className="non-fixed-title">{user.typeOfDiabetes}</span>
                 </li>
                 <li className="user-data">
-                 <span className="">WEIGHT:</span>
-                 <span className="">{user.weight}</span>
+                 <span className="fixed-title">WEIGHT:</span>
+                 <span className="non-fixed-title">{user.weight}</span>
                 </li>
                 <li className="user-data">
-                 <span className="">HEIGHT:</span>
-                 <span className="">{user.height}</span>
+                 <span className="fixed-title">HEIGHT:</span>
+                 <span className="non-fixed-title">{user.height}</span>
                 </li>
         
                </ul>
                </div>
-             <Footer/>
+            
         
               </div>
           case STATUS.ERROR:
