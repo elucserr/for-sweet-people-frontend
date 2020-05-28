@@ -1,93 +1,103 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import apiClient from '../../services/apiClient';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
+import Square from '../../components/Square';
+import AddMedicine  from './AddMedicine';
 import './Medicine.css'
-import Button from '../../components/Button';
 
 class Medicine extends Component {
+  state = {
+    date: "",
+    time: "",
+    type: "",
+    medicine: [],
+  };
 
-  constructor(){
-    super()
-    this.state = {
-      date: '',
-      time: '',
-      type: ''
-    }
-  }
-
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    axios
-    .post("https://api-forsweetpeople.herokuapp.com/medicine", this.state)
-    .then(response => {
-    })
-    .catch((error) => {
-      this.setState({
-        error: error,
+  loadRecords = () => {
+    apiClient
+      .getAllRecords()
+      .then(({ data }) => {
+        this.setState({
+          medicine: data,
+        });
       })
-    })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-    this.setState({
-      date: '',
-      time: '',
-      type: ''
-    });
+  componentDidMount() {
+    this.loadRecords();
   }
+
+  handleDelete = (id) => {
+    apiClient
+      .deleteRecord(id)
+      .then(() => {
+        console.log("done");
+        this.loadRecords();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { date, time, type } = this.state;
+    apiClient
+      .createRecord({ date, time, type })
+      .then((res) => {
+        const newMedicine = this.state.medicine
+        newMedicine.push(res.data)
+        this.setState({
+          medicine: newMedicine
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  renderRecords = () => {
+    const { medicine } = this.state;
+    return medicine.map((medicine, index) => {
+      return (
+        <Square key={index} item={medicine} handleDelete={this.handleDelete} />
+      );
+    });
+  };
 
   render() {
-    const { date, time, type } = this.state;
     return (
-      <div className="container-medicine">
+    <div>
+     <div className="container-medicine">
       <Nav/>
       <div><p className='title'>M E D I C I N E</p></div>
-      <form className="login-form" onSubmit={this.handleSubmit}>
-          <input className="input-options"
-            //inputStyle="input--white--outline"
-            //inputSize="input--medium"
-            type="date"
-            name="date"
-            id="date"
-            placeholder="DATE"
-            value={date}
-            onChange={this.handleChange}
-          />
-          <input className="input-options"
-            //inputStyle="input--white--outline"
-            //inputSize="input--medium"
-            type="time"
-            name="time"
-            id="time"
-            placeholder="TIME"
-            value={time}
-            onChange={this.handleChange}
-          />
-          <input className="input-options"
-            //inputStyle="input--white--outline"
-            //inputSize="input--medium"
-            type="text"
-            name="type"
-            id="type"
-            placeholder="WRITE YOUR MEDICINE"
-            value={type}
-            onChange={this.handleChange}
-          />
-          <Button onClick={() => {console.log('Clicked')}}
-          type="add"
-          buttonStyle="btn--white--solid--2"
-          buttonSize="btn--options"
-          value="login">ADD</Button>
-        </form>
-      <Footer/>
+      <AddMedicine
+        onSubmit={ this.handleSubmit } 
+        onChange= {this.handleChange}
+        date= {this.state.date}
+        time= {this.state.time}
+        level= {this.state.type}
+        />
+      
+       {this.renderRecords()}
+      
       </div>
-    )
+        
+     
+       <Footer/>
+    </div>
+     
+    );
   }
 }
 
