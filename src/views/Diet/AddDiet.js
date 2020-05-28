@@ -43,7 +43,7 @@ class AddDiet extends Component {
     
            <Button onClick={() => {console.log('Clicked')}}
             type="submit"
-            buttonStyle="btn--white--solid--1"
+            buttonStyle="btn--white--solid--4"
             buttonSize="btn--options"
             value="submit">ADD</Button>
          </form>

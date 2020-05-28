@@ -1,93 +1,103 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import apiClient from '../../services/apiClient';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
+import Square from '../../components/Square';
+import AddDiet  from './AddDiet';
 import './Diet.css'
-import Button from '../../components/Button';
 
 class Diet extends Component {
+  state = {
+    date: "",
+    type: "",
+    aliment: "",
+    diet: [],
+  };
 
-  constructor(){
-    super()
-    this.state = {
-      date: '',
-      time: '',
-      aliment: ''
-    }
-  }
-
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    axios
-    .post("https://api-forsweetpeople.herokuapp.com/diet", this.state)
-    .then(response => {
-    })
-    .catch((error) => {
-      this.setState({
-        error: error,
+  loadRecords = () => {
+    apiClient
+      .getAllRecords()
+      .then(({ data }) => {
+        this.setState({
+          diet: data,
+        });
       })
-    })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-    this.setState({
-      date: '',
-      time: '',
-      aliment: ''
-    });
+  componentDidMount() {
+    this.loadRecords();
   }
+
+  handleDelete = (id) => {
+    apiClient
+      .deleteRecord(id)
+      .then(() => {
+        console.log("done");
+        this.loadRecords();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { date, type, aliment } = this.state;
+    apiClient
+      .createRecord({ date, type, aliment })
+      .then((res) => {
+        const newDiet = this.state.diet
+        newDiet.push(res.data)
+        this.setState({
+          diet: newDiet
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  renderRecords = () => {
+    const { diet } = this.state;
+    return diet.map((diet, index) => {
+      return (
+        <Square key={index} item={diet} handleDelete={this.handleDelete} />
+      );
+    });
+  };
 
   render() {
-    const { date, type, aliment } = this.state;
     return (
-      <div className="container-diet">
+    <div>
+     <div className="container-aliment">
       <Nav/>
-      <div><p className='title'>N U T R I T I O N</p></div>
-      <form className="login-form" onSubmit={this.handleSubmit}>
-          <input className="input-options"
-            //inputStyle="input--white--outline"
-            //inputSize="input--medium"
-            type="date"
-            name="date"
-            id="date"
-            placeholder="DATE"
-            value={date}
-            onChange={this.handleChange}
-          />
-          <input className="input-options"
-            //inputStyle="input--white--outline"
-            //inputSize="input--medium"
-            type="text"
-            name="type"
-            id="type"
-            placeholder="TIME OF DAY"
-            value={type}
-            onChange={this.handleChange}
-          />
-          <input className="input-options"
-            //inputStyle="input--white--outline"
-            //inputSize="input--medium"
-            type="text"
-            name="aliment"
-            id="aliment"
-            placeholder="WHAT DID YOU EAT?"
-            value={aliment}
-            onChange={this.handleChange}
-          />
-          <Button onClick={() => {console.log('Clicked')}}
-          type="add"
-          buttonStyle="btn--white--solid--4"
-          buttonSize="btn--options"
-          value="login">ADD</Button>
-        </form>
-      <Footer/>
+      <div><p className='title'>A L I M E N T S</p></div>
+      <AddDiet
+        onSubmit={ this.handleSubmit } 
+        onChange= {this.handleChange}
+        date= {this.state.date}
+        time= {this.state.type}
+        level= {this.state.aliment}
+        />
+      
+       {this.renderRecords()}
+      
       </div>
-    )
+        
+     
+       <Footer/>
+    </div>
+     
+    );
   }
 }
 
