@@ -88,8 +88,8 @@ Have effects on buttons and general views
 
 ### Deploy
 
-[Deploy Link](http://heroku.com/)
+[Deploy Link](https://forsweetpeople.netlify.app/)
 
 ### Slides
 
-[Slides Link](https://slides.com/elenalucas/deck/fullscreen)
+[Slides Link](https://slides.com/elenalucas/forsweetpeople/fullscreen)
