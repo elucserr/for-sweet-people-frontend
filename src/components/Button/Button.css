@@ -117,3 +117,11 @@
     width: 200px;
     height: 37px;
 }
+
+.-btn--super--small{
+    padding: 15px 30 px;
+    font-size: 13px;
+    width: 60px;
+    height: 20px;
+
+}
