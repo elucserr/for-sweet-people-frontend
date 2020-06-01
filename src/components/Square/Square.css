@@ -16,8 +16,8 @@
 /*square colors*/
 
 .square--white {
-    background-color: var(--dark);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--dark);
     border: none;
 }
 
@@ -32,4 +32,16 @@
     margin: 2px;
 }
 
+.ul-list{
+    
+    margin-left: 0px;
+ 
+
+}
+.list{
+    align-content: center;
+    text-align: center;
+    list-style:none;
+    font-size: 12px;
+}
 

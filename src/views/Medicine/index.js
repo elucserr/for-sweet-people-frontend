@@ -86,7 +86,7 @@ class Medicine extends Component {
         onChange= {this.handleChange}
         date= {this.state.date}
         time= {this.state.time}
-        level= {this.state.type}
+        type= {this.state.type}
         />
       
        {this.renderRecords()}

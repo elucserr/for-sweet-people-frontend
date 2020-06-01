@@ -84,9 +84,9 @@ class Activity extends Component {
       <AddActivity
         onSubmit={ this.handleSubmit } 
         onChange= {this.handleChange}
-        date= {this.state.type}
-        time= {this.state.km}
-        level= {this.state.time}
+        type= {this.state.type}
+        km= {this.state.km}
+        time= {this.state.time}
         />
       
        {this.renderRecords()}

@@ -85,8 +85,8 @@ class Diet extends Component {
         onSubmit={ this.handleSubmit } 
         onChange= {this.handleChange}
         date= {this.state.date}
-        time= {this.state.type}
-        level= {this.state.aliment}
+        type= {this.state.type}
+        aliment= {this.state.aliment}
         />
       
        {this.renderRecords()}

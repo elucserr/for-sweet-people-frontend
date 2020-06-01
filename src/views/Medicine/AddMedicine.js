@@ -31,7 +31,7 @@ class AddMedicine extends Component {
              onChange={onChange}
            />
            
-           <input
+           <select
              className="input-options"
              type="text"
              name="type"
@@ -39,7 +39,15 @@ class AddMedicine extends Component {
              placeholder="TYPE OF MEDICINE"
              value= {type}
              onChange={onChange}
-           />
+           ><option value="Glucotrol">Glucotrol</option>
+           <option value="Orinase">Orinase</option>
+           <option value="Amaryl">Amaryl</option>
+           <option value="Micronase">Micronase</option>
+           <option value="DiaBeta">DiaBeta</option>
+           <option value="Lantus">Lantus</option>
+           <option value="Levemir">Levemir</option>
+           <option value="Insulatard">Insulatard</option>
+           <option value="Novarapid">Novarapid</option></select>
     
            <Button onClick={() => {console.log('Clicked')}}
             type="submit"
