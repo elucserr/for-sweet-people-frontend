@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button'
+import "./protected.css"
 
 import { withAuth } from "../../context/authContext";
 
@@ -9,8 +10,9 @@ class Protected extends Component {
   render() {
     const { onLogout } = this.props;
     return (
-      <div>
-        <h1>Are you sure you want to logout?</h1>
+      <div className="question">
+      <img src="/images/person.png" alt="person" className="person" />
+        <h1 className="question-text">Are you sure you want to logout?</h1>
         
         <Button onClick={onLogout}
            type="submit" 

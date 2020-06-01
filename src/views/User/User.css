@@ -55,6 +55,7 @@
    line-height: 25pt;
  }
 
+ .user-font{font-size: 16px;}
  .pr-1{padding-right: 1rem; box-sizing: border-box;}
  .pl-1{padding-left: 1rem; box-sizing: border-box;}
  .flex-row {

@@ -1,0 +1,15 @@
+.question {
+background-color:  #C0433C;
+text-align: center;
+padding-top: 25%;
+height: 667px;
+}
+.question-text {
+    color: white;
+}
+
+
+.person{
+    width: 70%;
+    height: 50%;
+}
