@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import apiClient from "../../services/apiClient";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import Square from "../../components/Square";
+import SquareBlood from "../../components/SquareBlood";
 import AddBlood from "./AddBlood";
 import "./Blood.css";
 
@@ -16,7 +16,7 @@ class Blood extends Component {
 
   loadRecords = () => {
     apiClient
-      .getAllRecords()
+      .getAllRecordsBlood()
       .then(({ data }) => {
         this.setState({
           blood: data,
@@ -33,7 +33,7 @@ class Blood extends Component {
 
   handleDelete = (id) => {
     apiClient
-      .deleteRecord(id)
+      .deleteRecordBlood(id)
       .then(() => {
         console.log("done");
         this.loadRecords();
@@ -53,7 +53,7 @@ class Blood extends Component {
     e.preventDefault();
     const { date, time, level } = this.state;
     apiClient
-      .createRecord({ date, time, level })
+      .createRecordBlood({ date, time, level })
       .then((res) => {
         const newBlood = this.state.blood;
         newBlood.push(res.data);
@@ -71,7 +71,7 @@ class Blood extends Component {
     return blood.map((blood, index) => {
       return (
         <div className="records-container">
-          <Square key={index} item={blood} handleDelete={this.handleDelete} />
+          <SquareBlood key={index} item={blood} handleDelete={this.handleDelete} />
         </div>
       );
     });

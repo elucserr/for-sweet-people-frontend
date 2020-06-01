@@ -13,7 +13,7 @@ class Options extends Component {
       <div className="background-options">
       <Nav/>
        <div className="flex-grid">
-       <Link className='nav-link' to='/blood'>
+       <Link className='link' to='/blood'>
         <Card
          className="grid-item"
          children="BLOOD"
@@ -21,7 +21,7 @@ class Options extends Component {
          cardSize="card--medium"
         />
         </Link>
-        <Link className='nav-link' to='/medicine'>
+        <Link className='link' to='/medicine'>
         <Card
          className="grid-item"
          children="MEDICINE"
@@ -29,7 +29,7 @@ class Options extends Component {
          cardSize="card--medium"
         />
         </Link>
-        <Link className='nav-link' to='/activity'>
+        <Link className='link' to='/activity'>
         <Card
          className="grid-item"
          children="ACTIVITY"
@@ -37,7 +37,7 @@ class Options extends Component {
          cardSize="card--medium"
         />
         </Link>
-        <Link className='nav-link' to='/diet'>
+        <Link className='link' to='/diet'>
         <Card
          className="grid-item"
          children="NUTRITION"

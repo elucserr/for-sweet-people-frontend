@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import apiClient from '../../services/apiClient';
-import Nav from '../../components/Nav';
-import Footer from '../../components/Footer';
-import Square from '../../components/Square';
-import AddMedicine  from './AddMedicine';
-import './Medicine.css'
+import apiClient from "../../services/apiClient";
+import Nav from "../../components/Nav";
+import Footer from "../../components/Footer";
+import SquareMedicine from "../../components/SquareMedicine";
+import AddMedicine from "./AddMedicine";
+import "./Medicine.css";
 
 class Medicine extends Component {
   state = {
@@ -16,7 +16,7 @@ class Medicine extends Component {
 
   loadRecords = () => {
     apiClient
-      .getAllRecords()
+      .getAllRecordsMedicine()
       .then(({ data }) => {
         this.setState({
           medicine: data,
@@ -33,7 +33,7 @@ class Medicine extends Component {
 
   handleDelete = (id) => {
     apiClient
-      .deleteRecord(id)
+      .deleteRecordMedicine(id)
       .then(() => {
         console.log("done");
         this.loadRecords();
@@ -53,13 +53,13 @@ class Medicine extends Component {
     e.preventDefault();
     const { date, time, type } = this.state;
     apiClient
-      .createRecord({ date, time, type })
+      .createRecordMedicine({ date, time, type })
       .then((res) => {
-        const newMedicine = this.state.medicine
-        newMedicine.push(res.data)
+        const newMedicine = this.state.medicine;
+        newMedicine.push(res.data);
         this.setState({
-          medicine: newMedicine
-        })
+          medicine: newMedicine,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -70,33 +70,40 @@ class Medicine extends Component {
     const { medicine } = this.state;
     return medicine.map((medicine, index) => {
       return (
-        <Square key={index} item={medicine} handleDelete={this.handleDelete} />
+        <div className="records-container">
+          <SquareMedicine
+            key={index}
+            item={medicine}
+            handleDelete={this.handleDelete}
+          />
+        </div>
       );
     });
   };
 
   render() {
     return (
-    <div>
-     <div className="container-medicine">
-      <Nav/>
-      <div><p className='title'>M E D I C I N E</p></div>
-      <AddMedicine
-        onSubmit={ this.handleSubmit } 
-        onChange= {this.handleChange}
-        date= {this.state.date}
-        time= {this.state.time}
-        type= {this.state.type}
-        />
-      
-       {this.renderRecords()}
-      
+      <div>
+        <div className="container-medicine">
+          <Nav />
+          <div>
+            <p className="title">M E D I C I N E</p>
+          </div>
+          <AddMedicine
+            onSubmit={this.handleSubmit}
+            onChange={this.handleChange}
+            date={this.state.date}
+            time={this.state.time}
+            type={this.state.type}
+          />
+
+          {this.renderRecords()}
+        </div>
+
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
-        
-     
-      <div className="footer"><Footer/></div>
-    </div>
-     
     );
   }
 }

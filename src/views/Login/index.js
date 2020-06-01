@@ -71,7 +71,7 @@ class Login extends Component {
           
         </form>
     
-        <Link to={'/signup'}>
+        <Link className="text-login" to={'/signup'}>
         <Button onClick={() => {console.log('Clicked')}}
         type="submit"
         buttonStyle="btn--transparent"

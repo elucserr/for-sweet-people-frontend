@@ -4,7 +4,7 @@ background-image: url("./background.jpg");
 
 .login-container{
 
-padding-top: 100px;
+padding-top: 250px;
 padding-left: 20px;
 display: flex;
 flex-direction: column;
@@ -44,3 +44,8 @@ margin: 5px;
 }
 
 
+.text-login{
+    position: fixed;
+    top:75%;
+    left: 18%;
+}

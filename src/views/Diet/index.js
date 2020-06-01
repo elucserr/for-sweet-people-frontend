@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import apiClient from '../../services/apiClient';
-import Nav from '../../components/Nav';
-import Footer from '../../components/Footer';
-import Square from '../../components/Square';
-import AddDiet  from './AddDiet';
-import './Diet.css'
+import apiClient from "../../services/apiClient";
+import Nav from "../../components/Nav";
+import Footer from "../../components/Footer";
+import SquareDiet from "../../components/SquareDiet";
+import AddDiet from "./AddDiet";
+import "./Diet.css";
 
 class Diet extends Component {
   state = {
@@ -16,7 +16,7 @@ class Diet extends Component {
 
   loadRecords = () => {
     apiClient
-      .getAllRecords()
+      .getAllRecordsDiet()
       .then(({ data }) => {
         this.setState({
           diet: data,
@@ -33,7 +33,7 @@ class Diet extends Component {
 
   handleDelete = (id) => {
     apiClient
-      .deleteRecord(id)
+      .deleteRecordDiet(id)
       .then(() => {
         console.log("done");
         this.loadRecords();
@@ -53,13 +53,13 @@ class Diet extends Component {
     e.preventDefault();
     const { date, type, aliment } = this.state;
     apiClient
-      .createRecord({ date, type, aliment })
+      .createRecordDiet({ date, type, aliment })
       .then((res) => {
-        const newDiet = this.state.diet
-        newDiet.push(res.data)
+        const newDiet = this.state.diet;
+        newDiet.push(res.data);
         this.setState({
-          diet: newDiet
-        })
+          diet: newDiet,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -70,32 +70,35 @@ class Diet extends Component {
     const { diet } = this.state;
     return diet.map((diet, index) => {
       return (
-        <Square key={index} item={diet} handleDelete={this.handleDelete} />
+        <div className="records-container">
+          <SquareDiet key={index} item={diet} handleDelete={this.handleDelete} />
+        </div>
       );
     });
   };
 
   render() {
     return (
-    <div>
-     <div className="container-diet">
-      <Nav/>
-      <div><p className='title'>N U T R I T I O N</p></div>
-      <AddDiet
-        onSubmit={ this.handleSubmit } 
-        onChange= {this.handleChange}
-        date= {this.state.date}
-        type= {this.state.type}
-        aliment= {this.state.aliment}
-        />
-      
-       {this.renderRecords()}
-      
+      <div>
+        <div className="container-diet">
+          <Nav />
+          <div>
+            <p className="title">N U T R I T I O N</p>
+          </div>
+          <AddDiet
+            onSubmit={this.handleSubmit}
+            onChange={this.handleChange}
+            date={this.state.date}
+            type={this.state.type}
+            aliment={this.state.aliment}
+          />
+
+          {this.renderRecords()}
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
-      <div className="footer"><Footer/></div>
-       
-    </div>
-     
     );
   }
 }

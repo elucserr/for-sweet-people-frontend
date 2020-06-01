@@ -13,7 +13,7 @@
     text-align: center;
     justify-content: center;
     position: fixed;
-    top: 70px;
+    top: 100px;
     
   }
   .grid-item {
@@ -30,6 +30,7 @@
       font-size: 20px;
   }
   
-  .nav-link{
-    
-      }
+ .link{
+   margin-top: -15px;
+   
+ }

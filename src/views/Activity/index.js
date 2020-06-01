@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import apiClient from '../../services/apiClient';
-import Nav from '../../components/Nav';
-import Footer from '../../components/Footer';
-import Square from '../../components/Square';
-import AddActivity  from './AddActivity';
-import './Activity.css'
+import apiClient from "../../services/apiClient";
+import Nav from "../../components/Nav";
+import Footer from "../../components/Footer";
+import SquareActivity from "../../components/SquareActivity";
+import AddActivity from "./AddActivity";
+import "./Activity.css";
 
 class Activity extends Component {
   state = {
@@ -16,7 +16,7 @@ class Activity extends Component {
 
   loadRecords = () => {
     apiClient
-      .getAllRecords()
+      .getAllRecordsAcitivity()
       .then(({ data }) => {
         this.setState({
           activity: data,
@@ -33,7 +33,7 @@ class Activity extends Component {
 
   handleDelete = (id) => {
     apiClient
-      .deleteRecord(id)
+      .deleteRecordActivity(id)
       .then(() => {
         console.log("done");
         this.loadRecords();
@@ -53,13 +53,13 @@ class Activity extends Component {
     e.preventDefault();
     const { type, km, time } = this.state;
     apiClient
-      .createRecord({ type, km, time })
+      .createRecordActivity({ type, km, time })
       .then((res) => {
-        const newActivity = this.state.activity
-        newActivity.push(res.data)
+        const newActivity = this.state.activity;
+        newActivity.push(res.data);
         this.setState({
-          activity: newActivity
-        })
+          activity: newActivity,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -70,33 +70,38 @@ class Activity extends Component {
     const { activity } = this.state;
     return activity.map((activity, index) => {
       return (
-        <Square key={index} item={activity} handleDelete={this.handleDelete} />
+        <div className="records-container">
+          <SquareActivity
+            key={index}
+            item={activity}
+            handleDelete={this.handleDelete}
+          />
+        </div>
       );
     });
   };
 
   render() {
     return (
-    <div>
-     <div className="container-activity">
-      <Nav/>
-      <div><p className='title'>A C T I V I T Y</p></div>
-      <AddActivity
-        onSubmit={ this.handleSubmit } 
-        onChange= {this.handleChange}
-        type= {this.state.type}
-        km= {this.state.km}
-        time= {this.state.time}
-        />
-      
-       {this.renderRecords()}
-      
+      <div>
+        <div className="container-activity">
+          <Nav />
+          <div>
+            <p className="title">A C T I V I T Y</p>
+          </div>
+          <AddActivity
+            onSubmit={this.handleSubmit}
+            onChange={this.handleChange}
+            type={this.state.type}
+            km={this.state.km}
+            time={this.state.time}
+          />
+
+          {this.renderRecords()}
+        </div>
+
+        <Footer />
       </div>
-        
-     
-       <Footer/>
-    </div>
-     
     );
   }
 }
