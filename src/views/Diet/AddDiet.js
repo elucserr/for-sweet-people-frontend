@@ -34,8 +34,8 @@ class AddDiet extends Component {
            <input
              className="input-options"
              type="text"
-             name="level"
-             id="level"
+             name="aliment"
+             id="aliment"
              placeholder="ALIMENT"
              value= {aliment}
              onChange={onChange}
@@ -43,7 +43,7 @@ class AddDiet extends Component {
     
            <Button onClick={() => {console.log('Clicked')}}
             type="submit"
-            buttonStyle="btn--white--solid--1"
+            buttonStyle="btn--white--solid--4"
             buttonSize="btn--options"
             value="submit">ADD</Button>
          </form>

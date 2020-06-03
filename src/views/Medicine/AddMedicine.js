@@ -13,7 +13,7 @@ class AddMedicine extends Component {
            
            <input
              className="input-options"
-             type="text"
+             type="date"
              name="date"
              id="date"
              placeholder="DATE"
@@ -23,7 +23,7 @@ class AddMedicine extends Component {
            
            <input
              className="input-options"
-             type="text"
+             type="time"
              name="time"
              id="time"
              placeholder="TIME"
@@ -43,7 +43,7 @@ class AddMedicine extends Component {
     
            <Button onClick={() => {console.log('Clicked')}}
             type="submit"
-            buttonStyle="btn--white--solid--1"
+            buttonStyle="btn--white--solid--2"
             buttonSize="btn--options"
             value="submit">ADD</Button>
          </form>

@@ -14,8 +14,8 @@ class AddActivity extends Component {
            <input
              className="input-options"
              type="text"
-             name="text"
-             id="text"
+             name="type"
+             id="type"
              placeholder="SPORT"
              value= {type}
              onChange={ onChange }
@@ -23,7 +23,7 @@ class AddActivity extends Component {
            
            <input
              className="input-options"
-             type="text"
+             type="time"
              name="time"
              id="time"
              placeholder="TIME"
@@ -33,9 +33,9 @@ class AddActivity extends Component {
            
            <input
              className="input-options"
-             type="number"
-             name="number"
-             id="number"
+             type="text"
+             name="km"
+             id="km"
              placeholder="KM"
              value= {km}
              onChange={onChange}
@@ -43,7 +43,7 @@ class AddActivity extends Component {
     
            <Button onClick={() => {console.log('Clicked')}}
             type="submit"
-            buttonStyle="btn--white--solid--1"
+            buttonStyle="btn--white--solid--3"
             buttonSize="btn--options"
             value="submit">ADD</Button>
          </form>
