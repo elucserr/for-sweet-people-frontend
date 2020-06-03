@@ -23,7 +23,7 @@ class AddBlood extends Component {
            
            <input
              className="input-options"
-             type="number"
+             type="text"
              name="time"
              id="time"
              placeholder="TIME"

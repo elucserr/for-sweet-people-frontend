@@ -83,9 +83,10 @@
 }
 
 .btn--transparent {
-    color: black;
+    background-color: var(--white);
+    color: var(--dark);
     border: none;
-    border-radius: 15px;
+    border-radius: 8px;
 }
 
 
@@ -124,4 +125,11 @@
     width: 70px;
     height: 30px;
 
+}
+
+.-btn--delete{
+    padding: 15px 30 px;
+    font-size: 14px;
+    width: 20px;
+    height: 25px;
 }

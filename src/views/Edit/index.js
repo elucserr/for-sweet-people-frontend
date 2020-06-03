@@ -152,6 +152,7 @@ export default class Edit extends Component {
               </li>
             </ul>
             <div className="buttons">
+            <Link to={'/options'}>
               <Button
                 onClick={() => {
                   console.log("Clicked");
@@ -163,6 +164,7 @@ export default class Edit extends Component {
               >
                 SAVE
               </Button>
+              </Link>
             </div>
           </form>
         </section>

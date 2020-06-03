@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "../../context/authContext";
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
+
 //import Input from '../../components/Input';
 import "./Login.css"
 
@@ -71,6 +72,7 @@ class Login extends Component {
           
         </form>
     
+
         <Link className="text-login" to={'/signup'}>
         <Button onClick={() => {console.log('Clicked')}}
         type="submit"
