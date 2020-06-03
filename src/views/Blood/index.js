@@ -68,25 +68,25 @@ class Blood extends Component {
 
   renderRecords = () => {
     const { blood } = this.state;
-    
+
     return (
       <div className="records-container">
         <ul className="ul-container">
           {blood.map((blood, index) => {
-            return (     
+            return (
               <li className="li-container">
                 <SquareBlood
-                className="text-square"
+                  className="text-square"
                   key={index}
                   item={blood}
                   handleDelete={this.handleDelete}
                 />
               </li>
-            )
+            );
           })}
         </ul>
       </div>
-    )
+    );
   };
 
   render() {

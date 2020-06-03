@@ -10,8 +10,8 @@ class Medicine extends Component {
   state = {
     date: "",
     time: "",
-    type: "",
-    medicine: [],
+    medicine: "",
+    med: [],
   };
 
   loadRecords = () => {
@@ -19,7 +19,7 @@ class Medicine extends Component {
       .getAllRecordsMedicine()
       .then(({ data }) => {
         this.setState({
-          medicine: data,
+          med: data,
         });
       })
       .catch((error) => {
@@ -51,14 +51,14 @@ class Medicine extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { date, time, type } = this.state;
+    const { date, time, medicine } = this.state;
     apiClient
-      .createRecordMedicine({ date, time, type })
+      .createRecordMedicine({ date, time, medicine })
       .then((res) => {
-        const newMedicine = this.state.medicine;
+        const newMedicine = this.state.med;
         newMedicine.push(res.data);
         this.setState({
-          medicine: newMedicine,
+          med: newMedicine,
         });
       })
       .catch((error) => {
@@ -67,18 +67,26 @@ class Medicine extends Component {
   };
 
   renderRecords = () => {
-    const { medicine } = this.state;
-    return medicine.map((medicine, index) => {
-      return (
-        <div className="records-container">
-          <SquareMedicine
-            key={index}
-            item={medicine}
-            handleDelete={this.handleDelete}
-          />
-        </div>
-      );
-    });
+    const { med } = this.state;
+
+    return (
+      <div className="records-container">
+        <ul className="ul-container">
+          {med.map((med, index) => {
+            return (
+              <li className="li-container">
+                <SquareMedicine
+                  className="text-square"
+                  key={index}
+                  item={med}
+                  handleDelete={this.handleDelete}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
   };
 
   render() {
@@ -94,15 +102,12 @@ class Medicine extends Component {
             onChange={this.handleChange}
             date={this.state.date}
             time={this.state.time}
-            type={this.state.type}
+            medicine={this.state.medicine}
           />
-
           {this.renderRecords()}
         </div>
 
-        <div className="footer">
-          <Footer />
-        </div>
+        <Footer />
       </div>
     );
   }

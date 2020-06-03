@@ -6,6 +6,7 @@ import SquareActivity from "../../components/SquareActivity";
 import AddActivity from "./AddActivity";
 import "./Activity.css";
 
+
 class Activity extends Component {
   state = {
     type: "",
@@ -16,7 +17,7 @@ class Activity extends Component {
 
   loadRecords = () => {
     apiClient
-      .getAllRecordsAcitivity()
+      .getAllRecordsActivity()
       .then(({ data }) => {
         this.setState({
           activity: data,
@@ -51,9 +52,9 @@ class Activity extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { type, km, time } = this.state;
+    const { type, time, km } = this.state;
     apiClient
-      .createRecordActivity({ type, km, time })
+      .createRecordActivity({ type, time, km })
       .then((res) => {
         const newActivity = this.state.activity;
         newActivity.push(res.data);
@@ -68,17 +69,25 @@ class Activity extends Component {
 
   renderRecords = () => {
     const { activity } = this.state;
-    return activity.map((activity, index) => {
-      return (
-        <div className="records-container">
-          <SquareActivity
-            key={index}
-            item={activity}
-            handleDelete={this.handleDelete}
-          />
-        </div>
-      );
-    });
+
+    return (
+      <div className="records-container">
+        <ul className="ul-container">
+          {activity.map((activity, index) => {
+            return (
+              <li className="li-container">
+                <SquareActivity
+                  className="text-square"
+                  key={index}
+                  item={activity}
+                  handleDelete={this.handleDelete}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
   };
 
   render() {
@@ -93,10 +102,9 @@ class Activity extends Component {
             onSubmit={this.handleSubmit}
             onChange={this.handleChange}
             type={this.state.type}
-            km={this.state.km}
             time={this.state.time}
+            km={this.state.km}
           />
-
           {this.renderRecords()}
         </div>
 

@@ -9,7 +9,7 @@ import "./Diet.css";
 class Diet extends Component {
   state = {
     date: "",
-    type: "",
+    time: "",
     aliment: "",
     diet: [],
   };
@@ -51,9 +51,9 @@ class Diet extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { date, type, aliment } = this.state;
+    const { date, time, aliment } = this.state;
     apiClient
-      .createRecordDiet({ date, type, aliment })
+      .createRecordDiet({ date, time, aliment })
       .then((res) => {
         const newDiet = this.state.diet;
         newDiet.push(res.data);
@@ -68,13 +68,25 @@ class Diet extends Component {
 
   renderRecords = () => {
     const { diet } = this.state;
-    return diet.map((diet, index) => {
-      return (
-        <div className="records-container">
-          <SquareDiet key={index} item={diet} handleDelete={this.handleDelete} />
-        </div>
-      );
-    });
+
+    return (
+      <div className="records-container">
+        <ul className="ul-container">
+          {diet.map((diet, index) => {
+            return (
+              <li className="li-container">
+                <SquareDiet
+                  className="text-square"
+                  key={index}
+                  item={diet}
+                  handleDelete={this.handleDelete}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
   };
 
   render() {
@@ -83,21 +95,19 @@ class Diet extends Component {
         <div className="container-diet">
           <Nav />
           <div>
-            <p className="title">N U T R I T I O N</p>
+            <p className="title">D I E T</p>
           </div>
           <AddDiet
             onSubmit={this.handleSubmit}
             onChange={this.handleChange}
             date={this.state.date}
-            type={this.state.type}
+            time={this.state.time}
             aliment={this.state.aliment}
           />
-
           {this.renderRecords()}
         </div>
-        <div className="footer">
-          <Footer />
-        </div>
+
+        <Footer />
       </div>
     );
   }

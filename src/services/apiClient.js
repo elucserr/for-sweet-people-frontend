@@ -54,7 +54,7 @@ class ApiClient {
   deleteRecordDiet(id) {
     return this.apiClient.delete(`/diet/${id}`);
   }
-  getAllRecordsAcitivity() {
+  getAllRecordsActivity() {
     return this.apiClient.get("/activity");
   }
 

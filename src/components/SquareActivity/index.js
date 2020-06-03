@@ -2,9 +2,9 @@ import React from "react";
 import "./Square.css";
 import Button from "../../components/Button";
 
-const STYLES = ["square--white"];
+const STYLES = ["square--white-b"];
 
-const SIZES = ["square--medium"];
+const SIZES = ["square--medium-b"];
 
 export const SquareActivity = ({
   children,
@@ -21,14 +21,15 @@ export const SquareActivity = ({
 
   return (
     <div className={`square ${checkSquareStyle} ${checkSquareSize}`}>
-      <ul className="ul-list">
-        <li className="list">{item.time}</li>
-        <li className="list">{item.type}</li>
-        <li className="list">{item.km}</li>
+      <ul className="ul-list-blood">
+        <li className="list-1">{item.type}</li>
+        <li className="list-2">{item.time}</li>
+        <li className="list-3">{item.km}</li>
       </ul>
 
       <Button
         buttonStyle="btn--transparent"
+        buttonSize="btn--delete"
         onClick={(e) => {
           handleDelete(item._id);
         }}
@@ -39,4 +40,4 @@ export const SquareActivity = ({
   );
 };
 
-export default SquareActivity;
+export default SquareActivity ;

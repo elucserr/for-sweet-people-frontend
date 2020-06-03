@@ -6,14 +6,14 @@ class AddMedicine extends Component {
 
 
     render() {
-     const { onSubmit, onChange, date, time, type } = this.props;
+     const { onSubmit, onChange, date, time, medicine } = this.props;
      return (
        <div>
          <form className="login-form" onSubmit={ onSubmit }>
            
            <input
              className="input-options"
-             type="date"
+             type="text"
              name="date"
              id="date"
              placeholder="DATE"
@@ -23,7 +23,7 @@ class AddMedicine extends Component {
            
            <input
              className="input-options"
-             type="number"
+             type="text"
              name="time"
              id="time"
              placeholder="TIME"
@@ -31,27 +31,19 @@ class AddMedicine extends Component {
              onChange={onChange}
            />
            
-           <select
+           <input
              className="input-options"
              type="text"
-             name="type"
-             id="type"
-             placeholder="TYPE OF MEDICINE"
-             value= {type}
+             name="medicine"
+             id="medicine"
+             placeholder="MEDICINE"
+             value= {medicine}
              onChange={onChange}
-           ><option value="Glucotrol">Glucotrol</option>
-           <option value="Orinase">Orinase</option>
-           <option value="Amaryl">Amaryl</option>
-           <option value="Micronase">Micronase</option>
-           <option value="DiaBeta">DiaBeta</option>
-           <option value="Lantus">Lantus</option>
-           <option value="Levemir">Levemir</option>
-           <option value="Insulatard">Insulatard</option>
-           <option value="Novarapid">Novarapid</option></select>
+           />
     
            <Button onClick={() => {console.log('Clicked')}}
             type="submit"
-            buttonStyle="btn--white--solid--2"
+            buttonStyle="btn--white--solid--1"
             buttonSize="btn--options"
             value="submit">ADD</Button>
          </form>

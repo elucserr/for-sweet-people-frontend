@@ -1,47 +1,56 @@
 :root {
-    --primary: #ffffff;
-    --red: #C0433C;
-    --orange: #E79F7F;
-    --grey: #C7D0D8;
-    --green: #8c8f7f;
-    --dark: #222222;
-    --white: #ffffff;
+  --primary: #ffffff;
+  --red: #c0433c;
+  --orange: #e79f7f;
+  --grey: #c7d0d8;
+  --green: #8c8f7f;
+  --dark: #222222;
+  --white: #ffffff;
 }
 
 .square {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-weight: 100;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-weight: 100;
 }
 
 /*square colors*/
 
-.square--white {
-    background-color: var(--white);
-    color: var(--dark);
-    border: none;
+.square--white-b {
+  background-color: var(--white);
+  color: var(--dark);
+  padding: 3px;
+  position: relative;
+  left: 20px;
+  border: none;
 }
-
 
 /* Card Sizes */
 
-.square--medium {
-    font-size: 18px;
-    border-radius: 10px;
-    width: 69px;
-    height: 72px; 
-    margin: 2px;
+.square--medium-b {
+  border-radius: 10px;
+  width: 72px;
+  height: 72px;
+  margin: -10px;
 }
 
-.ul-list{
-    
-    margin-left: 0px;
- 
-
-}
-.list{
-    align-content: center;
-    text-align: center;
-    list-style:none;
-    font-size: 12px;
+.ul-list-blood {
+  list-style: none;
+  margin-left: -35px;
 }
 
+
+.list-1 {
+  list-style: none;
+  font-size: 13px;
+  color: var(--red);
+  font-weight: bold;
+}
+
+.list-2 {
+  list-style: none;
+  font-size: 13px;
+}
+.list-3 {
+  list-style: none;
+  font-size: 13px;
+}

@@ -6,7 +6,7 @@ class AddDiet extends Component {
 
 
     render() {
-     const { onSubmit, onChange, date, type, aliment } = this.props;
+     const { onSubmit, onChange, date, time, aliment } = this.props;
      return (
        <div>
          <form className="login-form" onSubmit={ onSubmit }>
@@ -24,18 +24,18 @@ class AddDiet extends Component {
            <input
              className="input-options"
              type="text"
-             name="type"
-             id="type"
-             placeholder="TYPE"
-             value= {type}
+             name="time"
+             id="time"
+             placeholder="TIME"
+             value= {time}
              onChange={onChange}
            />
            
            <input
              className="input-options"
              type="text"
-             name="aliment"
-             id="aliment"
+             name="level"
+             id="level"
              placeholder="ALIMENT"
              value= {aliment}
              onChange={onChange}
@@ -43,7 +43,7 @@ class AddDiet extends Component {
     
            <Button onClick={() => {console.log('Clicked')}}
             type="submit"
-            buttonStyle="btn--white--solid--4"
+            buttonStyle="btn--white--solid--1"
             buttonSize="btn--options"
             value="submit">ADD</Button>
          </form>
