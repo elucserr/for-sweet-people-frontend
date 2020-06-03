@@ -14,7 +14,7 @@ export default class Edit extends Component {
     email: "",
     weight: "",
     height: "",
-    user:[],
+    user: [],
   };
 
   handleChange = (e) => {
@@ -152,18 +152,18 @@ export default class Edit extends Component {
               </li>
             </ul>
             <div className="buttons">
-            <Link to={'/options'}>
-              <Button
-                onClick={() => {
-                  console.log("Clicked");
-                }}
-                type="submit"
-                buttonStyle="btn--orange--solid"
-                buttonSize="-btn--super--small"
-                value="save"
-              >
-                SAVE
-              </Button>
+              <Link to={"/options"}>
+                <Button
+                  onClick={() => {
+                    console.log("Clicked");
+                  }}
+                  type="submit"
+                  buttonStyle="btn--orange--solid"
+                  buttonSize="-btn--super--small"
+                  value="save"
+                >
+                  SAVE
+                </Button>
               </Link>
             </div>
           </form>

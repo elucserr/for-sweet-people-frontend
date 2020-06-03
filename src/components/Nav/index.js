@@ -88,7 +88,9 @@ class Nav extends Component {
                 </li>
                 <li className="flex-row col-12 bb-white pb-1">
                   <span className="user-font flex-row col-4">BIRTH:</span>
-                  <span className="user-font flex-row col-8">{user.dateOfBirth}</span>
+                  <span className="user-font flex-row col-8">
+                    {user.dateOfBirth}
+                  </span>
                 </li>
                 <li className="flex-row col-12 bb-white pb-1">
                   <span className="user-font flex-row col-4">WEIGHT:</span>

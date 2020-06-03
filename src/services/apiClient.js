@@ -1,4 +1,4 @@
-  import axios from "axios";
+import axios from "axios";
 
 class ApiClient {
   constructor() {
@@ -6,9 +6,9 @@ class ApiClient {
       baseURL: process.env.REACT_APP_BACKEND_URI,
       withCredentials: true,
     });
-    console.log(process.env.REACT_APP_BACKEND_URI)
+    console.log(process.env.REACT_APP_BACKEND_URI);
   }
- 
+
   //Auth
 
   login(body) {
@@ -24,7 +24,7 @@ class ApiClient {
   }
 
   signup(body) {
-    return this.apiClient.post('/signup', body);
+    return this.apiClient.post("/signup", body);
   }
 
   getProtected() {
@@ -76,7 +76,6 @@ class ApiClient {
   deleteRecordMedicine(id) {
     return this.apiClient.delete(`/medicine/${id}`);
   }
-  
 }
 
 const apiClient = new ApiClient();

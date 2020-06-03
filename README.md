@@ -18,8 +18,6 @@ Personal motivation, since I have diabetes and I know how difficult it is to kee
 
 ## User Stories
 
-**404** - As a user I want to see a 404 page when I access to a page that does not exist
-
 **Homepage** - As a user I want to be able to access to a homepage where appears an introduction of the App 
 
 **Sign up** - As a user I want to sign up on the App so that I can access to all the functionalities
@@ -56,7 +54,7 @@ Have effects on buttons and general views
 
 | Method | Path      | description    | Body                            |
 | :----: | --------- | -------------- | ------------------------------- |
-|  POST  | `/signup` | signup a user  | `{ username, password, email }` |
+|  POST  | `/signup` | signup a user  | `{ username, password }` |
 |  POST  | `/login`  | login a user   | `{ username, password }`        |
 |  POST   | `/logout` | logout session |                                 |
 

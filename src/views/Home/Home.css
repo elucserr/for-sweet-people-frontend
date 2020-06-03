@@ -1,25 +1,25 @@
-.background{
-    background-image: url("../Home/backround.jpg")
-    }
-    
-    .home{
-    padding-top: 100px;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 314px;
-    height: 636px;
-    align-items: center;
-    justify-content:center;
-    }
+.background {
+  background-image: url("../Home/backround.jpg");
+}
 
-    .name{
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 22px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 4px;
-        }
+.home {
+  padding-top: 100px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 314px;
+  height: 636px;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 4px;
+}

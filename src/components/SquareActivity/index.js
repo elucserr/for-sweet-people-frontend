@@ -40,4 +40,4 @@ export const SquareActivity = ({
   );
 };
 
-export default SquareActivity ;
+export default SquareActivity;

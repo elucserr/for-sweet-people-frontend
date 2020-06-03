@@ -1,135 +1,131 @@
 :root {
-    --warning: #222222;
-    --danger: #222222;
-    --success: #222222;
-    --white: #ffffff;
-    --dark: #222222;
-    --red: #C0433C;
-    --orange: #E79F7F;
-    --grey: #C7D0D8;
-    --green: #8c8f7f;
+  --warning: #222222;
+  --danger: #222222;
+  --success: #222222;
+  --white: #ffffff;
+  --dark: #222222;
+  --red: #c0433c;
+  --orange: #e79f7f;
+  --grey: #c7d0d8;
+  --green: #8c8f7f;
 }
 
 .btn {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-weight: 100;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    margin: 10px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-weight: 100;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin: 10px;
 }
 
 .btn:hover {
-    transform: translateY(-3px)
+  transform: translateY(-3px);
 }
 
 /*button colors*/
 
 .btn--orange--solid {
-    background-color: var(--orange);
-    color: var(--white);
-    border: none;
-    border-radius: 20px;
-    margin-top: 10px;
-    
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
 }
 
 .btn--green--solid {
-    background-color: var(--green);
-    color: var(--white);
-    border: none;
-    border-radius: 20px;
-    margin-top: 10px;
-    
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
 }
 
 .btn--white--solid {
-    background-color: var(--white);
-    color: var(--dark);
-    border: none;
-    border-radius: 20px;
-    margin-top: 10px;
+  background-color: var(--white);
+  color: var(--dark);
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
 }
 
 .btn--white--solid--1 {
-    background-color: var(--white);
-    color: var(--red);
-    border: none;
-    border-radius: 15px;
-    margin-top: 30px;
+  background-color: var(--white);
+  color: var(--red);
+  border: none;
+  border-radius: 15px;
+  margin-top: 30px;
 }
 
 .btn--white--solid--2 {
-    background-color: var(--white);
-    color: var(--orange);
-    border: none;
-    border-radius: 15px;
-    margin-top: 30px;
+  background-color: var(--white);
+  color: var(--orange);
+  border: none;
+  border-radius: 15px;
+  margin-top: 30px;
 }
 
 .btn--white--solid--3 {
-    background-color: var(--white);
-    color: var(--grey);
-    border: none;
-    border-radius: 15px;
-    margin-top: 30px;
+  background-color: var(--white);
+  color: var(--grey);
+  border: none;
+  border-radius: 15px;
+  margin-top: 30px;
 }
 
 .btn--white--solid--4 {
-    background-color: var(--white);
-    color: var(--green);
-    border: none;
-    border-radius: 15px;
-    margin-top: 30px;
+  background-color: var(--white);
+  color: var(--green);
+  border: none;
+  border-radius: 15px;
+  margin-top: 30px;
 }
 
 .btn--transparent {
-    background-color: var(--white);
-    color: var(--dark);
-    border: none;
-    border-radius: 8px;
+  background-color: var(--white);
+  color: var(--dark);
+  border: none;
+  border-radius: 8px;
 }
-
 
 /* Button Sizes */
 
 .btn--medium {
-    padding : 10 px 20 px;
-    font-size: 18px;
+  padding: 10 px 20 px;
+  font-size: 18px;
 }
 
 .btn--small {
-    padding: 15px 30 px;
-    font-size: 15px;
-    width: 100px;
-    height: 37px;
+  padding: 15px 30 px;
+  font-size: 15px;
+  width: 100px;
+  height: 37px;
 }
 
 .btn--options {
-    padding: 15px 30 px;
-    font-size: 15px;
-    width: 100px;
-    height: 30px;
-    border-radius: 8px;
+  padding: 15px 30 px;
+  font-size: 15px;
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
 }
 
 .btn--line {
-    padding: 20px 30 px;
-    font-size:5px;
-    width: 200px;
-    height: 37px;
+  padding: 20px 30 px;
+  font-size: 5px;
+  width: 200px;
+  height: 37px;
 }
 
-.-btn--super--small{
-    padding: 15px 30 px;
-    font-size: 13px;
-    width: 70px;
-    height: 30px;
-
+.-btn--super--small {
+  padding: 15px 30 px;
+  font-size: 13px;
+  width: 70px;
+  height: 30px;
 }
 
-.-btn--delete{
-    padding: 15px 30 px;
-    font-size: 14px;
-    width: 20px;
-    height: 25px;
+.-btn--delete {
+  padding: 15px 30 px;
+  font-size: 14px;
+  width: 20px;
+  height: 25px;
 }

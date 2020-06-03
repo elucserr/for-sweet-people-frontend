@@ -1,48 +1,46 @@
 :root {
-    --primary: #ffffff;
-    --red: #C0433C;
-    --orange: #E79F7F;
-    --grey: #C7D0D8;
-    --green: #8c8f7f;
-    --dark: #222222;
-    --white: #ffffff;
+  --primary: #ffffff;
+  --red: #c0433c;
+  --orange: #e79f7f;
+  --grey: #c7d0d8;
+  --green: #8c8f7f;
+  --dark: #222222;
+  --white: #ffffff;
 }
 
 .input {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 100;
-    border-radius: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 100;
+  border-radius: 10px;
 }
-
 
 /*input colors*/
 
 .input--white--solid {
-    background-color: var(--white);
-    color: var(--dark);
-    border: none;
+  background-color: var(--white);
+  color: var(--dark);
+  border: none;
 }
 
 .input--white--outline {
-    background-color: transparent;
-    color: var(--dark);
-    border: var(--orange);
+  background-color: transparent;
+  color: var(--dark);
+  border: var(--orange);
 }
-
 
 /* Input Sizes */
 
 .input--medium {
-    width: 216px;
-    height: 37px;
+  width: 216px;
+  height: 37px;
 }
 
 .input--small {
-    width: 139px;
-    height: 24px;
+  width: 139px;
+  height: 24px;
 }
 
 .input--big {
-    width: 221px;
-    height: 24px;
+  width: 221px;
+  height: 24px;
 }

@@ -3,7 +3,6 @@ import apiClient from "../services/apiClient";
 
 export const AuthContext = React.createContext();
 
-
 export const withAuth = (Comp) => {
   return class WithAuth extends Component {
     render() {
@@ -54,14 +53,14 @@ class AuthProvider extends Component {
   }
   handleSignup = ({ username, password }) => {
     apiClient
-    .signup({ username, password })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  }
+      .signup({ username, password })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   handleLogin = ({ username, password }) => {
     apiClient

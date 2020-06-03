@@ -1,32 +1,30 @@
 :root {
-    --primary: #ffffff;
-    --red: #C0433C;
-    --orange: #E79F7F;
-    --grey: #C7D0D8;
-    --green: #8c8f7f;
-    --dark: #222222;
-    --white: #ffffff;
+  --primary: #ffffff;
+  --red: #c0433c;
+  --orange: #e79f7f;
+  --grey: #c7d0d8;
+  --green: #8c8f7f;
+  --dark: #222222;
+  --white: #ffffff;
 }
 
 .scroll {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 100;
-    border-radius: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 100;
+  border-radius: 10px;
 }
-
 
 /*input colors*/
 
 .scroll--white--solid {
-    background-color: var(--white);
-    color: var(--dark);
-    border: none;
+  background-color: var(--white);
+  color: var(--dark);
+  border: none;
 }
-
 
 /* Input Sizes */
 
 .input--big {
-    width: 221px;
-    height: 24px;
+  width: 221px;
+  height: 24px;
 }

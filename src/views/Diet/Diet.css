@@ -1,18 +1,17 @@
 .container-diet {
-  background-color: #8c8f7f;;
+  background-color: #8c8f7f;
   text-align: center;
   justify-content: center;
   width: 376px;
   height: 700px;
 }
 
- 
-.input-options{
+.input-options {
   width: 300px;
   height: 30px;
   box-sizing: border-box;
   border-radius: 10px;
-  font-family:'Alegreya Sans SC', sans-serif;
+  font-family: "Alegreya Sans SC", sans-serif;
   text-align: center;
   margin: 5px;
 }
@@ -44,28 +43,25 @@
   justify-content: center;
   padding: 25px;
   border-radius: 15px;
- 
 }
 
-.ul-container{
-    margin: -20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-    padding-left: 0;
-    padding-right: 0;   
-    margin-bottom: 10px;
-    padding-bottom: 10px; 
+.ul-container {
+  margin: -20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
-.ul-container>* {
+.ul-container > * {
   flex: 1 1 69px;
 }
-
 
 .li-container {
   list-style: none;
   margin: 5px;
   margin-bottom: 50px;
 }
-

@@ -6,7 +6,6 @@ import SquareActivity from "../../components/SquareActivity";
 import AddActivity from "./AddActivity";
 import "./Activity.css";
 
-
 class Activity extends Component {
   state = {
     type: "",

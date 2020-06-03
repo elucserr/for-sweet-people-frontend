@@ -6,7 +6,7 @@ import PrivateRoute from "./views/PrivateRoute";
 
 import Protected from "./views/Protected";
 import LoginWithAuth from "./views/Login";
-import SignupWithAuth from './views/Signup';
+import SignupWithAuth from "./views/Signup";
 
 import AuthProvider from "./context/authContext";
 
@@ -26,7 +26,7 @@ class App extends Component {
         <div>
           <div className="App">
             <Switch>
-              <Route exact path={"/"} component={Home}/>
+              <Route exact path={"/"} component={Home} />
               <AnonRoute exact path={"/login"} component={LoginWithAuth} />
               <AnonRoute exact path={"/signup"} component={SignupWithAuth} />
               <Route exact path={"/options"} component={Options} />
