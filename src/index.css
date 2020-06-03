@@ -1,10 +1,62 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Alegreya Sans SC', sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 16px;
+  min-height: 100%;
+  position: relative;
+}
+body {
+  line-height: 1.3;
+  margin: 0px;
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: 40px;
+}
+header,
+body {
+  font: 400 1rem "Alegreya Sans SC", sans-serif;
+}
+/* .z-index-1000{z-index: 1000} */
+
+a {
+  text-decoration: none;
+  color: #c0433c;
+}
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+a.link-inside-element {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+input {
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  border: 1px solid #f7f7f7;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.textarea {
+  width: 100%;
+}
+h1 {
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1rem;
+}
+p,
+span {
+  font-size: 1rem;
+}
+i {
+  font-size: 1.5rem;
+}
+.fs-small {
+  font-size: 0.75rem;
 }

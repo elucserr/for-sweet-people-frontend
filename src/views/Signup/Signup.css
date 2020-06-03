@@ -1,0 +1,43 @@
+.background {
+  background-image: url("../Login/background.jpg");
+}
+
+.signup-container {
+  padding-top: 100px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 314px;
+  height: 636px;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.input-signup {
+  width: 216px;
+  height: 37px;
+  border: 2px solid #8c8f7f;
+  box-sizing: border-box;
+  border-radius: 20px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  text-align: center;
+  margin: 5px;
+}

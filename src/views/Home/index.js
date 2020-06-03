@@ -1,34 +1,29 @@
 import React, { Component } from "react";
-import apiClient from "../../services/apiClient";
+import Button from "../../components/Button";
+import "./Home.css";
+import { Link } from "react-router-dom";
 
 export default class Home extends Component {
-  state = {
-    options: [],
-  };
-
-  loadOptions = () => {
-    apiClient
-    .getOptions()
-    .then(({ data }) => {
-      this.setState({
-        options: data,
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  };
-  componentDidMount(){
-    this.loadOptions();
-  };
-
-  renderOptions = () => {
-
-  };
-
-  render(){
-    return(
-      <div></div>
+  render() {
+    return (
+      <div className="background">
+        <div className="home">
+          <h1 className="name">F O R S W E E T P E O P L E</h1>
+          <Link to={"/login"}>
+            <Button
+              onClick={() => {
+                console.log("Clicked");
+              }}
+              type="submit"
+              buttonStyle="btn--orange--solid"
+              buttonSize="btn--LINE"
+              value="login"
+            >
+              Start
+            </Button>
+          </Link>
+        </div>
+      </div>
     );
   }
 }

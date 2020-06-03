@@ -1,0 +1,59 @@
+:root {
+  --primary: #ffffff;
+  --red: #c0433c;
+  --orange: #e79f7f;
+  --grey: #c7d0d8;
+  --green: #8c8f7f;
+  --dark: #222222;
+  --white: #ffffff;
+}
+
+.card {
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-weight: 100;
+}
+
+/*card colors*/
+
+.card--red {
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+}
+
+.card--grey {
+  background-color: var(--grey);
+  color: var(--white);
+  border: none;
+}
+
+.card--orange {
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+}
+
+.card--green {
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+}
+
+/* Card Sizes */
+
+.card--medium {
+  font-size: 18px;
+  width: 153px;
+  height: 225px;
+  margin: 2px;
+}
+
+.card--small {
+  padding: 15px 30 px;
+  font-size: 20px;
+}
+
+.card--big {
+  padding: 20px 35 px;
+  font-size: 25px;
+}
