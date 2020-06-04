@@ -60,7 +60,7 @@ class Nav extends Component {
       height,
     } = this.state;
     apiClient
-      .createRecord({
+      .editUser({
         username,
         dateOfBirth,
         typeOfDiabetes,
@@ -68,12 +68,8 @@ class Nav extends Component {
         weight,
         height,
       })
-      .then((res) => {
-        const newUser = this.state.user;
-        newUser.push(res.data);
-        this.setState({
-          user: newUser,
-        });
+      .then(() => {
+        
       })
       .catch((error) => {
         console.log(error);

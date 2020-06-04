@@ -31,6 +31,10 @@ class ApiClient {
     return this.apiClient.get("/protected");
   }
 
+  editUser(body) {
+    return this.apiClient.put("/user", body);
+  }
+
   getAllRecordsBlood() {
     return this.apiClient.get("/blood");
   }
