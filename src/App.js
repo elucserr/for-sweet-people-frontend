@@ -13,7 +13,6 @@ import AuthProvider from "./context/authContext";
 import Home from "./views/Home";
 import Options from "./views/Options";
 import User from "./views/User";
-import Edit from "./views/Edit";
 import Blood from "./views/Blood";
 import Activity from "./views/Activity";
 import Medicine from "./views/Medicine";
@@ -31,7 +30,6 @@ class App extends Component {
               <AnonRoute exact path={"/signup"} component={SignupWithAuth} />
               <Route exact path={"/options"} component={Options} />
               <Route exact path={"/profile"} component={User} />
-              <Route exact path={"/profile/edit"} component={Edit} />
               <Route exact path={"/blood"} component={Blood} />
               <Route exact path={"/activity"} component={Activity} />
               <Route exact path={"/medicine"} component={Medicine} />

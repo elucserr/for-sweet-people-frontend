@@ -4,7 +4,7 @@ import "../../views/User/User.css";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 import apiClient from "../../services/apiClient";
-import Edit from "../../views/Edit";
+import User from "../../views/User";
 
 class Nav extends Component {
   constructor() {
@@ -122,7 +122,7 @@ class Nav extends Component {
           >
             {" "}
             {update && (
-              <Edit
+              <User
                 username={username}
                 dateOfBirth={dateOfBirth}
                 typeOfDiabetes={typeOfDiabetes}
