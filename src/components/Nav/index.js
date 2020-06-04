@@ -4,6 +4,7 @@ import "../../views/User/User.css";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 import apiClient from "../../services/apiClient";
+import Edit from "../../views/Edit";
 
 class Nav extends Component {
   constructor() {
@@ -11,11 +12,17 @@ class Nav extends Component {
     this.state = {
       user: {},
       status: "",
+      username: "",
+      dateOfBirth: "",
+      typeOfDiabetes: "",
+      email: "",
+      weight: "",
+      height: "",
     };
   }
   state = {
     showing: false,
-
+    update: false,
   };
 
   componentDidMount() {
@@ -36,8 +43,63 @@ class Nav extends Component {
       });
   }
 
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const {
+      username,
+      dateOfBirth,
+      typeOfDiabetes,
+      email,
+      weight,
+      height,
+    } = this.state;
+    apiClient
+      .createRecord({
+        username,
+        dateOfBirth,
+        typeOfDiabetes,
+        email,
+        weight,
+        height,
+      })
+      .then((res) => {
+        const newUser = this.state.user;
+        newUser.push(res.data);
+        this.setState({
+          user: newUser,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+ 
+
+  handleUpdate = () => {
+    this.setState({
+      update: !this.state.update,
+    });
+  };
+
   render() {
-    const { showing, user } = this.state;
+    const {
+      showing,
+      update,
+      user,
+      username,
+      dateOfBirth,
+      typeOfDiabetes,
+      email,
+      weight,
+      height,
+    } = this.state;
 
     return (
       <nav className="nav">
@@ -58,60 +120,74 @@ class Nav extends Component {
               showing ? "user-container--visible" : "user-container--disable"
             }`}
           >
-            <section className="section-container">
-              <div className="user-data">
-                <div className="image-info">
-                  <img src="/images/user.png" alt="user" className="user" />
+            {" "}
+            {update && (
+              <Edit
+                username={username}
+                dateOfBirth={dateOfBirth}
+                typeOfDiabetes={typeOfDiabetes}
+                email={email}
+                weight={weight}
+                height={height}
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                handleUpdate={this.handleUpdate}
+              />
+            )}
+            {!update && (
+              <section className="section-container">
+                <div className="user-data">
+                  <div className="image-info">
+                    <img src="/images/user.png" alt="user" className="user" />
+                  </div>
+                  <div className="buttons-info">
+                    <div className="user-name">{user.username}</div>
+                  </div>
                 </div>
-                <div className="buttons-info">
-                  <div className="user-name">{user.username}</div>
-                </div>
-              </div>
 
-              <ul className="pr-1 pl-1 flex-row">
-                <li className="flex-row col-12 bb-white pb-1">
-                  <span className="user-font flex-row col-4">NAME:</span>
-                  <span className="user-font flex-row col-8">
-                    {user.username}
-                  </span>
-                </li>
+                <ul className="pr-1 pl-1 flex-row">
+                  <li className="flex-row col-12 bb-white pb-1">
+                    <span className="user-font flex-row col-4">NAME:</span>
+                    <span className="user-font flex-row col-8">
+                      {user.username}
+                    </span>
+                  </li>
 
-                <li className="flex-row col-12 bb-white pb-1">
-                  <span className="user-font flex-row col-4">EMAIL:</span>
-                  <span className="user-font flex-row col-8">{user.email}</span>
-                </li>
+                  <li className="flex-row col-12 bb-white pb-1">
+                    <span className="user-font flex-row col-4">EMAIL:</span>
+                    <span className="user-font flex-row col-8">
+                      {user.email}
+                    </span>
+                  </li>
 
-                <li className="flex-row col-12 bb-white pb-1">
-                  <span className="user-font flex-row col-4">TYPE :</span>
-                  <span className="user-font flex-row col-8">
-                    {user.typeOfDiabetes}
-                  </span>
-                </li>
-                <li className="flex-row col-12 bb-white pb-1">
-                  <span className="user-font flex-row col-4">BIRTH:</span>
-                  <span className="user-font flex-row col-8">
-                    {user.dateOfBirth}
-                  </span>
-                </li>
-                <li className="flex-row col-12 bb-white pb-1">
-                  <span className="user-font flex-row col-4">WEIGHT:</span>
-                  <span className="user-font flex-row col-8">
-                    {user.weight}
-                  </span>
-                </li>
-                <li className="flex-row col-12 bb-white pb-1">
-                  <span className="user-font flex-row col-4">HEIGHT:</span>
-                  <span className="user-font flex-row col-8">
-                    {user.height}
-                  </span>
-                </li>
-              </ul>
-              <div className="buttons">
-                <Link to={"/profile/edit"}>
+                  <li className="flex-row col-12 bb-white pb-1">
+                    <span className="user-font flex-row col-4">TYPE :</span>
+                    <span className="user-font flex-row col-8">
+                      {user.typeOfDiabetes}
+                    </span>
+                  </li>
+                  <li className="flex-row col-12 bb-white pb-1">
+                    <span className="user-font flex-row col-4">BIRTH:</span>
+                    <span className="user-font flex-row col-8">
+                      {user.dateOfBirth}
+                    </span>
+                  </li>
+                  <li className="flex-row col-12 bb-white pb-1">
+                    <span className="user-font flex-row col-4">WEIGHT:</span>
+                    <span className="user-font flex-row col-8">
+                      {user.weight}
+                    </span>
+                  </li>
+                  <li className="flex-row col-12 bb-white pb-1">
+                    <span className="user-font flex-row col-4">HEIGHT:</span>
+                    <span className="user-font flex-row col-8">
+                      {user.height}
+                    </span>
+                  </li>
+                </ul>
+                <div className="buttons">
                   <Button
-                    onClick={() => {
-                      console.log("Clicked");
-                    }}
+                    onClick={this.handleUpdate}
                     type="submit"
                     buttonStyle="btn--orange--solid"
                     buttonSize="-btn--super--small"
@@ -119,22 +195,23 @@ class Nav extends Component {
                   >
                     EDIT
                   </Button>
-                </Link>
-                <Link to={"/protected"}>
-                  <Button
-                    onClick={() => {
-                      console.log("Clicked");
-                    }}
-                    type="submit"
-                    buttonStyle="btn--orange--solid"
-                    buttonSize="-btn--super--small"
-                    value="edit"
-                  >
-                    LOGOUT
-                  </Button>
-                </Link>
-              </div>
-            </section>
+
+                  <Link to={"/protected"}>
+                    <Button
+                      onClick={() => {
+                        console.log("Clicked");
+                      }}
+                      type="submit"
+                      buttonStyle="btn--orange--solid"
+                      buttonSize="-btn--super--small"
+                      value="edit"
+                    >
+                      LOGOUT
+                    </Button>
+                  </Link>
+                </div>
+              </section>
+            )}
           </div>
         </div>
 

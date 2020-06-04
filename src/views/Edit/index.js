@@ -1,58 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
 import Button from "../../components/Button";
-//import axios from 'axios';
-import apiClient from "../../services/apiClient";
 
 export default class Edit extends Component {
-  state = {
-    username: "",
-    dateOfBirth: "",
-    typeOfDiabetes: "",
-    email: "",
-    weight: "",
-    height: "",
-    user: [],
-  };
-
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const {
-      username,
-      dateOfBirth,
-      typeOfDiabetes,
-      email,
-      weight,
-      height,
-    } = this.state;
-    apiClient
-      .createRecord({
-        username,
-        dateOfBirth,
-        typeOfDiabetes,
-        email,
-        weight,
-        height,
-      })
-      .then((res) => {
-        const newUser = this.state.user;
-        newUser.push(res.data);
-        this.setState({
-          user: newUser,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
   render() {
     const {
       username,
@@ -61,10 +10,13 @@ export default class Edit extends Component {
       email,
       weight,
       height,
-    } = this.state;
+      handleSubmit,
+      handleChange,
+      handleUpdate,
+    } = this.props;
+
     return (
-      <div className="user-container">
-        <Nav />
+     
         <section className="section-container">
           <div className="user-data">
             <div className="image-info">
@@ -74,7 +26,7 @@ export default class Edit extends Component {
               <div className="user-name">{username}</div>
             </div>
           </div>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <ul className="pr-1 pl-1 pb-1 flex-row">
               <li className="flex-row col-12 bb-white pb-1">
                 <label for="name" className="user-font flex-row col-4">
@@ -83,9 +35,10 @@ export default class Edit extends Component {
                 <input
                   type="text"
                   className="user-font flex-row col-8"
-                  name="name"
+                  name="username"
+                  id="username"
                   value={username}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
               </li>
 
@@ -98,7 +51,7 @@ export default class Edit extends Component {
                   className="user-font flex-row col-8"
                   name="email"
                   value={email}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
               </li>
 
@@ -111,7 +64,7 @@ export default class Edit extends Component {
                   className="user-font flex-row col-8"
                   name="type"
                   value={typeOfDiabetes}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
               </li>
               <li className="flex-row col-12 bb-white pb-1">
@@ -123,7 +76,7 @@ export default class Edit extends Component {
                   className="user-font flex-row col-8"
                   name="date"
                   value={dateOfBirth}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
               </li>
               <li className="flex-row col-12 bb-white pb-1">
@@ -135,7 +88,7 @@ export default class Edit extends Component {
                   className="user-font flex-row col-8"
                   name="weight"
                   value={weight}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
               </li>
               <li className="flex-row col-12 bb-white pb-1">
@@ -147,30 +100,33 @@ export default class Edit extends Component {
                   className="user-font flex-row col-8"
                   name="height"
                   value={height}
-                  onChange={this.handleChange}
+                  onChange={handleChange}
                 />
               </li>
             </ul>
             <div className="buttons">
-              <Link to={"/options"}>
-                <Button
-                  onClick={() => {
-                    console.log("Clicked");
-                  }}
-                  type="submit"
-                  buttonStyle="btn--orange--solid"
-                  buttonSize="-btn--super--small"
-                  value="save"
-                >
-                  SAVE
-                </Button>
-              </Link>
+              <Button
+                type="submit"
+                buttonStyle="btn--orange--solid"
+                buttonSize="-btn--super--small"
+                value="save"
+              >
+                SAVE
+              </Button>
+
+              <Button
+                onClick={handleUpdate}
+                type="back"
+                buttonStyle="btn--orange--solid"
+                buttonSize="-btn--super--small"
+                value="back"
+              >
+                BACK
+              </Button>
             </div>
           </form>
         </section>
-
-        <Footer />
-      </div>
+      
     );
   }
 }
