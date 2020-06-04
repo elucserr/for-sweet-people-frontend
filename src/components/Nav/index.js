@@ -15,6 +15,7 @@ class Nav extends Component {
   }
   state = {
     showing: false,
+
   };
 
   componentDidMount() {
