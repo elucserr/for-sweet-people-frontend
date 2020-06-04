@@ -20,7 +20,7 @@ class AddDiet extends Component {
 
           <input
             className="input-options"
-            type="text"
+            type="time"
             name="time"
             id="time"
             placeholder="TIME"
